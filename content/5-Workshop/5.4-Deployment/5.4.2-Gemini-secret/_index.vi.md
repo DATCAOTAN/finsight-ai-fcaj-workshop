@@ -40,7 +40,7 @@ aws secretsmanager describe-secret `
   --output table
 ```
 
-Không chạy **get-secret-value** để chụp ảnh hoặc làm bằng chứng. Tạo biến cục bộ chứa ARN, không chứa key:
+Không chạy **get-secret-value**. Tạo biến cục bộ chứa ARN, không chứa key:
 
 ```powershell
 $WorkshopGeminiSecretArn = aws secretsmanager describe-secret `

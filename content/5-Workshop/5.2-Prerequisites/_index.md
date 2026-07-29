@@ -48,12 +48,12 @@ The expected region is **ap-southeast-1**. Stop if the caller or region is not t
 
 The deployer must be allowed to create and update the resources declared by the SAM template: CloudFormation, IAM roles, Lambda and Layers, API Gateway, S3, DynamoDB, SQS, Step Functions, CloudWatch and Logs, Cognito, CloudFront, and Secrets Manager references.
 
-The deployment uses **CAPABILITY_NAMED_IAM** because CloudFormation creates named least-privilege execution roles. Ask the account administrator for a temporary workshop deployment role that is restricted to the dedicated FinSight stack. Do not copy the broad EC2, VPC, Route 53, and wildcard policy from the original sample workshop; FinSight does not require those services.
+The deployment uses **CAPABILITY_NAMED_IAM** because CloudFormation creates named least-privilege execution roles. Ask the account administrator for a temporary workshop deployment role restricted to the dedicated FinSight stack.
 
 ## Gemini and input document
 
 - Create or obtain a Gemini API key for a controlled development project.
-- Do not paste the key into Markdown, source files, SAM parameters, shell history, screenshots, or chat.
+- Do not store the key in source control or SAM parameters.
 - Prepare one text-based PDF under 10 MiB with no private, customer, credential, medical, or regulated data.
 - A scanned image-only PDF is unsuitable for the success path because OCR is not implemented.
 

@@ -10,7 +10,7 @@ pre: " <b>5.1.</b> "
 
 [![Luồng Workshop FinSight AI end-to-end](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)
 
-*Hình: Chín giai đoạn có kiểm soát kết nối triển khai, demo, kiểm tra và cleanup. Chọn ảnh để xem kích thước đầy đủ.*
+*Hình: Luồng triển khai, demo, kiểm tra và cleanup FinSight AI.*
 
 Bạn sẽ triển khai một môi trường development có kiểm soát cho FinSight AI. User đã xác nhận đăng nhập qua Amazon Cognito, tải lên một PDF tài chính có văn bản nhúng và nhận kết quả phân tích có cấu trúc từ Gemini mà không làm lộ bucket tài liệu hoặc AWS credential dài hạn cho trình duyệt.
 

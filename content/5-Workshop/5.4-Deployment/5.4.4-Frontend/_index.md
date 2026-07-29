@@ -8,7 +8,7 @@ pre: " <b>5.4.4.</b> "
 
 ## Read public runtime identifiers
 
-CloudFormation outputs contain public browser configuration identifiers, not passwords or AWS keys. Keep their active values out of this report.
+CloudFormation outputs contain the public browser configuration identifiers required by the frontend.
 
 ```powershell
 $WorkshopRepository = "<path-to-finsight-ai>"

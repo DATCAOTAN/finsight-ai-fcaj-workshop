@@ -48,12 +48,12 @@ Region dự kiến là **ap-southeast-1**. Dừng lại nếu caller hoặc Regi
 
 Người triển khai cần quyền tạo và cập nhật các tài nguyên được khai báo trong SAM template: CloudFormation, IAM role, Lambda và Layer, API Gateway, S3, DynamoDB, SQS, Step Functions, CloudWatch và Logs, Cognito, CloudFront cùng tham chiếu Secrets Manager.
 
-Deployment dùng **CAPABILITY_NAMED_IAM** vì CloudFormation tạo các execution role có tên và quyền tối thiểu. Hãy yêu cầu quản trị viên cấp role triển khai tạm thời, giới hạn trong FinSight stack dành riêng cho workshop. Không sao chép policy wildcard gồm EC2, VPC và Route 53 của workshop mẫu cũ vì FinSight không dùng các dịch vụ đó.
+Deployment dùng **CAPABILITY_NAMED_IAM** vì CloudFormation tạo các execution role có tên và quyền tối thiểu. Hãy yêu cầu quản trị viên cấp role triển khai tạm thời, giới hạn trong FinSight stack dành riêng cho workshop.
 
 ## Gemini và tài liệu đầu vào
 
 - Tạo hoặc chuẩn bị Gemini API key cho một development project có kiểm soát.
-- Không dán key vào Markdown, source, SAM parameter, shell history, ảnh chụp màn hình hoặc chat.
+- Không lưu key vào source control hoặc SAM parameter.
 - Chuẩn bị một PDF có văn bản nhúng, nhỏ hơn 10 MiB và không chứa dữ liệu riêng tư, khách hàng, credential, y tế hoặc dữ liệu được quản lý.
 - PDF scan chỉ có hình ảnh không phù hợp với luồng thành công vì hệ thống chưa triển khai OCR.
 

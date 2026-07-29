@@ -129,7 +129,7 @@ aws cloudformation describe-stacks `
   --output json
 ```
 
-Continue only when the status is **CREATE_COMPLETE** or **UPDATE_COMPLETE**. Do not publish the returned output values.
+Continue only when the status is **CREATE_COMPLETE** or **UPDATE_COMPLETE**.
 
 ![CloudFormation stack deployment completed](/images/5-Workshop/5.4-Deployment/cloudformation-stack-complete.png)
 

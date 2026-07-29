@@ -129,7 +129,7 @@ aws cloudformation describe-stacks `
   --output json
 ```
 
-Chỉ tiếp tục khi trạng thái là **CREATE_COMPLETE** hoặc **UPDATE_COMPLETE**. Không công khai các output value được trả về.
+Chỉ tiếp tục khi trạng thái là **CREATE_COMPLETE** hoặc **UPDATE_COMPLETE**.
 
 ![Triển khai CloudFormation stack đã hoàn tất](/images/5-Workshop/5.4-Deployment/cloudformation-stack-complete.png)
 

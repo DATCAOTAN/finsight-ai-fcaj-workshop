@@ -8,14 +8,6 @@ pre: " <b>5.</b> "
 
 FinSight AI is a serverless AWS application that securely uploads financial PDFs, extracts embedded text by page, and produces a structured analysis with citations. This workshop deploys the verified development architecture in **ap-southeast-1** and uses **Google Gemini gemini-2.5-flash** as the explicitly selected analysis provider.
 
-{{% notice warning %}}
-Use an isolated development AWS account and a non-sensitive PDF. Never publish AWS account IDs, active endpoints, Cognito identifiers, document keys, credentials, tokens, API keys, or real financial records.
-{{% /notice %}}
-
-[![FinSight AI end-to-end workshop flow](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)
-
-*Figure: The complete FinSight AI workshop path from local validation to cleanup. Select the image to view it at full size.*
-
 ## Learning outcomes
 
 After completing the workshop, you will be able to:

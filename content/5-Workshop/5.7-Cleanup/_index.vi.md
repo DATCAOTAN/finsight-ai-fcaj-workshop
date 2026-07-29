@@ -40,9 +40,7 @@ Không purge SQS, tự xóa DynamoDB row hoặc làm trống bucket dùng chung.
 
 ## Xóa toàn stack
 
-{{% notice warning %}}
-Đây là thao tác phá hủy. Chỉ tiếp tục sau khi xác nhận **finsight-ai-dev** và cả hai bucket name chỉ thuộc workshop này. Hãy lưu bằng chứng đã loại bỏ dữ liệu nhạy cảm trước.
-{{% /notice %}}
+Xác nhận **finsight-ai-dev** và cả hai bucket name chỉ thuộc workshop này trước khi tiếp tục.
 
 Kiểm tra chính xác target:
 

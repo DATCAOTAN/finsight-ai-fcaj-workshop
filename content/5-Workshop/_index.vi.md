@@ -8,14 +8,6 @@ pre: " <b>5.</b> "
 
 FinSight AI là ứng dụng serverless trên AWS, hỗ trợ tải PDF tài chính lên an toàn, trích xuất văn bản nhúng theo từng trang và tạo kết quả phân tích có cấu trúc kèm trích dẫn. Workshop này triển khai kiến trúc development đã được kiểm chứng tại **ap-southeast-1** và chủ động chọn **Google Gemini gemini-2.5-flash** làm nhà cung cấp phân tích.
 
-{{% notice warning %}}
-Chỉ sử dụng tài khoản AWS development tách biệt và PDF không nhạy cảm. Không công khai AWS account ID, endpoint đang hoạt động, Cognito ID, object key, credential, token, API key hoặc tài liệu tài chính thật.
-{{% /notice %}}
-
-[![Luồng Workshop FinSight AI end-to-end](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)
-
-*Hình: Toàn bộ lộ trình Workshop FinSight AI từ kiểm tra cục bộ đến cleanup. Chọn ảnh để xem kích thước đầy đủ.*
-
 ## Kết quả học tập
 
 Sau khi hoàn thành workshop, bạn có thể:

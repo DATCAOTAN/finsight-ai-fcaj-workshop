@@ -12,7 +12,7 @@ You are deploying a controlled development environment for FinSight AI. A confir
 
 [![FinSight AI end-to-end workshop flow](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)](/images/5-Workshop/5.1-Overview/workshop-end-to-end-flow.svg)
 
-*Figure: Nine controlled stages connect deployment, demonstration, verification, and cleanup. Select the image to view it at full size.*
+*Figure: FinSight AI deployment, demonstration, verification, and cleanup.*
 
 The workshop follows one complete path:
 

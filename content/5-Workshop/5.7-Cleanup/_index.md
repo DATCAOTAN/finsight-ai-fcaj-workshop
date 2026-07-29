@@ -40,9 +40,7 @@ Do not purge SQS, delete DynamoDB rows manually, or empty shared buckets.
 
 ## Full-stack deletion
 
-{{% notice warning %}}
-This is destructive. Continue only after confirming that **finsight-ai-dev** and both bucket names belong exclusively to this workshop. Retain sanitized evidence first.
-{{% /notice %}}
+Confirm that **finsight-ai-dev** and both bucket names belong exclusively to this workshop before continuing.
 
 Inspect exact targets:
 

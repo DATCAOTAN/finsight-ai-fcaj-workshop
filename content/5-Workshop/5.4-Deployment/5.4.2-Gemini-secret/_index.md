@@ -40,7 +40,7 @@ aws secretsmanager describe-secret `
   --output table
 ```
 
-Do not run **get-secret-value** for screenshots or evidence. Set a local variable containing the ARN, not the key:
+Do not run **get-secret-value**. Set a local variable containing the ARN, not the key:
 
 ```powershell
 $WorkshopGeminiSecretArn = aws secretsmanager describe-secret `

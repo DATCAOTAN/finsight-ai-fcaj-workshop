@@ -17,7 +17,7 @@ Khi trạng thái đạt **ANALYZED**, hãy kiểm tra:
 - thông tin provider và model cho biết Gemini gemini-2.5-flash;
 - disclaimer về phân tích tài chính.
 
-Kết quả phải tóm tắt bằng chứng mà không bịa số liệu hoặc cung cấp lời khuyên đầu tư cá nhân.
+Kết quả phải tóm tắt tài liệu nguồn mà không bịa số liệu hoặc cung cấp lời khuyên đầu tư cá nhân.
 
 ![Kết quả phân tích có cấu trúc](/images/5-Workshop/5.5-Demo/analysis-result-summary.png)
 
@@ -31,7 +31,6 @@ Nếu analysis kết thúc ở **ANALYSIS_FAILED**:
 2. Không sửa DynamoDB hoặc gửi lại queue message.
 3. Nếu UI đánh dấu lỗi có thể retry, chờ hết cooldown hiển thị và chọn **Retry analysis** một lần.
 4. Nếu input quá lớn hoặc không phù hợp, sử dụng PDF có văn bản ngắn hơn.
-5. Chỉ lưu bằng chứng đã loại bỏ dữ liệu nhạy cảm.
 
 Hệ thống không tự động đổi từ Gemini sang provider khác.
 

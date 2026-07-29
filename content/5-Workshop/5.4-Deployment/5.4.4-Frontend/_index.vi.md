@@ -8,7 +8,7 @@ pre: " <b>5.4.4.</b> "
 
 ## Đọc public runtime identifier
 
-CloudFormation output chứa browser configuration identifier công khai, không chứa password hoặc AWS key. Không đưa giá trị đang hoạt động vào báo cáo này.
+CloudFormation output chứa các browser configuration identifier công khai mà frontend cần sử dụng.
 
 ```powershell
 $WorkshopRepository = "<path-to-finsight-ai>"

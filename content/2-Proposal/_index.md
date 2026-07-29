@@ -1,5 +1,5 @@
 ---
-title: "FinSight AI Project Proposal"
+title: "Proposal"
 date: 2026-07-29
 weight: 2
 chapter: false

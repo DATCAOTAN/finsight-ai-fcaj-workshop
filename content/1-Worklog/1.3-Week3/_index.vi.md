@@ -2,6 +2,7 @@
 title: "Nhật ký Tuần 3"
 date: 2026-07-06
 weight: 3
+pre: " <b> 1.3. </b> "
 ---
 
 **Thời gian:** 06–12/07/2026

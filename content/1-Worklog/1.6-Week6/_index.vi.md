@@ -2,6 +2,7 @@
 title: "Nhật ký Tuần 6"
 date: 2026-07-27
 weight: 6
+pre: " <b> 1.6. </b> "
 ---
 
 **Thời gian:** 27/07–02/08/2026

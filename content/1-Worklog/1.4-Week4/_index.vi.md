@@ -2,6 +2,7 @@
 title: "Nhật ký Tuần 4"
 date: 2026-07-13
 weight: 4
+pre: " <b> 1.4. </b> "
 ---
 
 **Thời gian:** 13–19/07/2026

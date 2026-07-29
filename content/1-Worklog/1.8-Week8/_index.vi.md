@@ -3,6 +3,7 @@ title: "Nhật ký Tuần 8"
 date: 2026-08-10
 publishDate: 2026-07-29
 weight: 8
+pre: " <b> 1.8. </b> "
 ---
 
 **Thời gian:** 10–15/08/2026

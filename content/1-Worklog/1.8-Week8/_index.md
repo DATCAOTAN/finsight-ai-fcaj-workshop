@@ -3,6 +3,7 @@ title: "Week 8 Worklog"
 date: 2026-08-10
 publishDate: 2026-07-29
 weight: 8
+pre: " <b> 1.8. </b> "
 ---
 
 **Period:** 10–15 August 2026

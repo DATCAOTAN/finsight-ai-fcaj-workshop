@@ -2,6 +2,7 @@
 title: "Week 5 Worklog"
 date: 2026-07-20
 weight: 5
+pre: " <b> 1.5. </b> "
 ---
 
 **Period:** 20–26 July 2026

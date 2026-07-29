@@ -3,6 +3,7 @@ title: "Nhật ký Tuần 7"
 date: 2026-08-03
 publishDate: 2026-07-29
 weight: 7
+pre: " <b> 1.7. </b> "
 ---
 
 **Thời gian:** 03–09/08/2026

@@ -18,11 +18,11 @@ weight: 3
 
 | Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
 |---|---|---|
-| 06/07 | Tôi đã nghiên cứu cách sự kiện S3 tạo thay đổi trạng thái mà không ghép nối trực tiếp các dịch vụ. | Kết nối lượt tải lên S3 đã được xác nhận với quy tắc EventBridge để quy trình chỉ bắt đầu sau khi đối tượng thực sự xuất hiện. |
-| 07/07 | Tôi đã tìm hiểu thời gian ẩn, cơ chế thử lại và hàng đợi lỗi của SQS để phân phối bất đồng bộ bền vững. | Cấu hình hàng đợi xử lý để hấp thụ tải đột biến và cô lập lỗi lặp lại. |
-| 08/07 | Tôi đã học vì sao consumer cần có tính idempotent khi thông điệp có thể được gửi nhiều lần. | Bổ sung kiểm tra vòng đời để thông điệp gửi trùng không khởi động lại tài liệu đang xử lý hoặc đã hoàn tất. |
-| 09–10/07 | Tôi đã nghiên cứu cách trích xuất văn bản nhúng trong PDF và giá trị của việc giữ ranh giới trang. | Dùng pypdf để lấy văn bản nhúng theo từng trang và giữ số trang cho phần trích dẫn sau này. |
-| 11–12/07 | Tôi đã học cách cổng kiểm tra chất lượng và sản phẩm riêng tư hỗ trợ xử lý tài liệu an toàn. | Bổ sung kiểm tra văn bản rỗng hoặc không sử dụng được, lưu nội dung trích xuất trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
+| 06/07 | Nghiên cứu cách sự kiện S3 tạo thay đổi trạng thái mà không ghép nối trực tiếp các dịch vụ. | Kết nối lượt tải lên S3 đã được xác nhận với quy tắc EventBridge để quy trình chỉ bắt đầu sau khi đối tượng thực sự xuất hiện. |
+| 07/07 | Tìm hiểu thời gian ẩn, cơ chế thử lại và hàng đợi lỗi của SQS để phân phối bất đồng bộ bền vững. | Cấu hình hàng đợi xử lý để hấp thụ tải đột biến và cô lập lỗi lặp lại. |
+| 08/07 | Học vì sao consumer cần có tính idempotent khi thông điệp có thể được gửi nhiều lần. | Bổ sung kiểm tra vòng đời để thông điệp gửi trùng không khởi động lại tài liệu đang xử lý hoặc đã hoàn tất. |
+| 09–10/07 | Nghiên cứu cách trích xuất văn bản nhúng trong PDF và giá trị của việc giữ ranh giới trang. | Dùng pypdf để lấy văn bản nhúng theo từng trang và giữ số trang cho phần trích dẫn sau này. |
+| 11–12/07 | Học cách cổng kiểm tra chất lượng và sản phẩm riêng tư hỗ trợ xử lý tài liệu an toàn. | Bổ sung kiểm tra văn bản rỗng hoặc không sử dụng được, lưu nội dung trích xuất trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
 
 ## Kết quả đạt được trong Tuần 3
 

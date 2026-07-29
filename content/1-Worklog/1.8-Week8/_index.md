@@ -19,19 +19,19 @@ weight: 8
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 10 August | I studied multi-user authorization tests as a way to verify owner isolation. | Tested two-user document isolation and confirmed that cross-owner access returns a safe not-found response. |
-| 11 August | I learned how negative security tests verify protected requests and private storage. | Confirmed unsigned API requests and direct access to private S3 objects are denied, while authenticated retry paths remain usable. |
-| 12 August | I studied how logs, workflow history, queues, health responses, and alarms provide complementary operational signals. | Reviewed each signal for normal and failure scenarios. |
-| 13 August | I learned why cleanup is part of a complete validation cycle. | Removed temporary documents, queue messages, test identities, and other validation artifacts without disturbing deployed application resources. |
-| 14 August | I studied how test counts and coverage support a final quality assessment. | Ran 288 backend tests with 86% coverage and 22 frontend tests, then reviewed the remaining failures and warnings. |
-| 15 August | I learned how release documentation connects architecture, operation, validation, and project handover. | Updated the architecture and bilingual Hugo content, verified the deployment, and performed the final release-readiness checklist. |
+| 10 August | Study multi-user authorization tests as a way to verify owner isolation. | Test two-user document isolation and confirm that cross-owner access returns a safe not-found response. |
+| 11 August | Learn how negative security tests verify protected requests and private storage. | Confirm that unsigned API requests and direct access to private S3 objects are denied while authenticated retry paths remain usable. |
+| 12 August | Study how logs, workflow history, queues, health responses, and alarms provide complementary operational signals. | Review each signal for normal and failure scenarios. |
+| 13 August | Learn why cleanup is part of a complete validation cycle. | Remove temporary documents, queue messages, test identities, and other validation artifacts without disturbing deployed application resources. |
+| 14 August | Study how test counts and coverage support a final quality assessment. | Run the current backend and frontend test suites, record coverage, and review any remaining failures or warnings. |
+| 15 August | Learn how release documentation connects architecture, operation, validation, and project handover. | Update the architecture and bilingual Hugo content, verify the deployment, and perform the final release-readiness review. |
 
-## Week 8 Achievements
+## Planned Week 8 Outcomes
 
-- Confirmed owner isolation with two user accounts and safe responses for unauthorized document access.
-- Verified that unsigned protected requests and direct access to private S3 content are denied as intended.
-- Reconfirmed both Week 7 size-boundary outcomes: the 214,091-character document reached ANALYZED with one Gemini request, while the 1,368,551-character document returned ANALYSIS_INPUT_TOO_LARGE with zero provider requests.
-- Completed 288 backend tests with 86% coverage and 22 frontend tests.
-- Verified the deployed stack at UPDATE_COMPLETE with 73 resources healthy and all 10 CloudWatch alarms in OK.
-- Cleaned up temporary validation data and resources after the final checks.
-- Completed the bilingual worklog and supporting documentation with the architecture described accurately as AWS-based infrastructure plus the external Gemini development provider, not as a fully AWS-native solution.
+- Confirm owner isolation with two controlled user accounts and safe responses for unauthorized document access.
+- Verify that unsigned protected requests and direct access to private S3 content are denied.
+- Recheck the successful and oversized-input paths planned for Week 7.
+- Run the current backend and frontend test suites and record coverage.
+- Verify the deployed stack, workflow, queue, and CloudWatch alarm health.
+- Clean up temporary validation data and resources after the final checks.
+- Complete the bilingual worklog and supporting documentation.

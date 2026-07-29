@@ -1,0 +1,123 @@
+<mxfile host="Electron" agent="draw.io" version="31.0.2">
+  <diagram id="workshop-flow" name="FinSight AI Workshop">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1000" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="FinSight AI — End-to-End Workshop Path" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontStyle=1;fontColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Deploy and demonstrate the verified Gemini workflow in AWS Asia Pacific (Singapore) — ap-southeast-1" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=2;fontColor=#52606D;" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="1100" height="28" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="localZone" value="1  LOCAL WORKSTATION" style="swimlane;html=1;rounded=1;arcSize=8;startSize=34;horizontal=1;strokeWidth=2;strokeColor=#545B64;fillColor=#FFFFFF;swimlaneFillColor=#F2F3F3;fontSize=14;fontStyle=1;fontColor=#232F3E;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="280" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="awsCloud" value="AWS Cloud" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=16;fontStyle=1;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=36;fontColor=#232F3E;dashed=0;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="1260" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="region" value="AWS Region  ap-southeast-1" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=14;fontStyle=1;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#147EBA;fillColor=none;verticalAlign=top;align=left;spacingLeft=34;fontColor=#147EBA;dashed=1;dashPattern=4 3;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="165" width="1200" height="620" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="source" value="FinSight AI source&#xa;read-only review" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=2;strokeColor=#545B64;fillColor=#F2F3F3;fontSize=13;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="90" y="210" width="180" height="72" as="geometry"/>
+        </mxCell>
+        <mxCell id="validateLocal" value="Validate&#xa;tests · lint · SAM" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=2;strokeColor=#147EBA;fillColor=#E9F3F8;fontSize=13;fontStyle=1;fontColor=#0B567C;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="180" height="72" as="geometry"/>
+        </mxCell>
+        <mxCell id="samCli" value="AWS SAM CLI&#xa;build + deploy" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.command_line_interface;" vertex="1" parent="1">
+          <mxGeometry x="140" y="500" width="78" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="safePdf" value="Non-sensitive&#xa;text-based PDF" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;fillColor=#E9F3F8;strokeColor=#147EBA;fontSize=12;fontStyle=1;fontColor=#0B567C;" vertex="1" parent="1">
+          <mxGeometry x="130" y="675" width="100" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="foundation" value="2  FOUNDATION &amp; SECURITY" style="swimlane;html=1;rounded=1;arcSize=6;startSize=30;horizontal=1;strokeWidth=1;strokeColor=#DD344C;fillColor=#FFFFFF;swimlaneFillColor=#FDEEF3;fontSize=13;fontStyle=1;fontColor=#812543;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="210" width="350" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="delivery" value="3  WEB DELIVERY &amp; IDENTITY" style="swimlane;html=1;rounded=1;arcSize=6;startSize=30;horizontal=1;strokeWidth=1;strokeColor=#8C4FFF;fillColor=#FFFFFF;swimlaneFillColor=#F3EDFF;fontSize=13;fontStyle=1;fontColor=#4D258C;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="210" width="350" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="runtime" value="4  SERVERLESS DOCUMENT PIPELINE" style="swimlane;html=1;rounded=1;arcSize=6;startSize=30;horizontal=1;strokeWidth=1;strokeColor=#D14D72;fillColor=#FFFFFF;swimlaneFillColor=#FDEEF3;fontSize=13;fontStyle=1;fontColor=#812543;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="210" width="370" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="demoZone" value="5  AUTHENTICATED DEMO &amp; EVIDENCE" style="swimlane;html=1;rounded=1;arcSize=6;startSize=30;horizontal=1;strokeWidth=1;strokeColor=#2D7D46;fillColor=#FFFFFF;swimlaneFillColor=#EAF6ED;fontSize=13;fontStyle=1;fontColor=#1F5A31;container=1;collapsible=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="500" width="1130" height="235" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cloudFormation" value="AWS CloudFormation" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudformation;" vertex="1" parent="1">
+          <mxGeometry x="450" y="285" width="78" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="secrets" value="AWS Secrets Manager&#xa;Gemini API key" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.secrets_manager;" vertex="1" parent="1">
+          <mxGeometry x="630" y="285" width="78" height="78" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cloudfront" value="Amazon CloudFront" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" vertex="1" parent="1">
+          <mxGeometry x="825" y="285" width="78" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="frontendS3" value="Private S3&#xa;frontend origin" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;" vertex="1" parent="1">
+          <mxGeometry x="930" y="285" width="75" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="cognito" value="Amazon Cognito&#xa;User + Identity Pools" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="285" width="78" height="78" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="apiGateway" value="API Gateway" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="285" width="72" height="72" as="geometry"/>
+        </mxCell>
+        <mxCell id="lambdaApi" value="Document API&#xa;Lambda" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="285" width="72" height="72" as="geometry"/>
+        </mxCell>
+        <mxCell id="stepFunctions" value="Step Functions" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="285" width="72" height="72" as="geometry"/>
+        </mxCell>
+        <mxCell id="lambdaAnalysis" value="Analysis&#xa;Lambda" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="285" width="72" height="72" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="browser" value="Confirmed user&#xa;Web browser" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=13;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="450" y="565" width="70" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="documentS3" value="Private versioned&#xa;document S3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;" vertex="1" parent="1">
+          <mxGeometry x="650" y="565" width="75" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="dynamodb" value="Amazon DynamoDB&#xa;metadata + status" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+          <mxGeometry x="820" y="565" width="78" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="sqs" value="Amazon SQS&#xa;processing queue" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" vertex="1" parent="1">
+          <mxGeometry x="990" y="565" width="78" height="78" as="geometry"/>
+        </mxCell>
+        <mxCell id="gemini" value="Google Gemini API&#xa;gemini-2.5-flash" style="shape=image;html=1;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://unpkg.com/@lobehub/icons-static-svg@1.91.0/icons/gemini-color.svg;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="560" width="88" height="88" as="geometry"/>
+        </mxCell>
+        <mxCell id="cloudwatch" value="Amazon CloudWatch&#xa;logs + alarms" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.5,1,0],[1,0.5,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch_2;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="565" width="78" height="78" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="eSourceValidate" value="1  inspect" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#545B64;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="source" target="validateLocal"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eValidateSam" value="2  build" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#147EBA;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="validateLocal" target="samCli"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eSamCf" value="3  deploy stack" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=3;strokeColor=#ED7100;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="samCli" target="cloudFormation"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eSecretCf" value="4  exact secret ARN" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;dashed=1;strokeWidth=2;strokeColor=#DD344C;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="secrets" target="cloudFormation"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="669" y="430"/><mxPoint x="489" y="430"/></Array></mxGeometry></mxCell>
+        <mxCell id="eCfDelivery" value="5  provision web + identity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#8C4FFF;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="cloudFormation" target="cloudfront"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="489" y="175"/><mxPoint x="864" y="175"/></Array></mxGeometry></mxCell>
+        <mxCell id="eCfRuntime" value="6  provision application runtime" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#D14D72;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="cloudFormation" target="apiGateway"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="489" y="145"/><mxPoint x="1236" y="145"/></Array></mxGeometry></mxCell>
+        <mxCell id="eCfS3" value="OAC" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#8C4FFF;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="cloudfront" target="frontendS3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eS3Cognito" value="authenticate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#8C4FFF;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="frontendS3" target="cognito"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eApiLambda" value="Lambda proxy" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#D14D72;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="apiGateway" target="lambdaApi"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eLambdaSfn" value="async" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;dashed=1;dashPattern=6 4;strokeWidth=2;strokeColor=#D14D72;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="lambdaApi" target="stepFunctions"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eSfnAnalysis" value="orchestrate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;dashed=1;dashPattern=6 4;strokeWidth=2;strokeColor=#D14D72;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="stepFunctions" target="lambdaAnalysis"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ePdfBrowser" value="7  upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#147EBA;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="safePdf" target="browser"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eBrowserDoc" value="presigned POST" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#2D7D46;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="browser" target="documentS3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eDocDdb" value="metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=2;strokeColor=#2D7D46;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="documentS3" target="dynamodb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eDdbSqs" value="stream event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;dashed=1;dashPattern=6 4;strokeWidth=2;strokeColor=#7256A3;labelBackgroundColor=#FFFFFF;fontSize=10;" edge="1" parent="1" source="dynamodb" target="sqs"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eSqsGemini" value="8  trusted extracted text over TLS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeWidth=3;strokeColor=#E58A00;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="sqs" target="gemini"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="eGeminiCw" value="9  verify result + evidence" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;dashed=1;dashPattern=2 5;strokeWidth=2;strokeColor=#3567A8;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="gemini" target="cloudwatch"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="note" value="Security boundary: isolated development account · non-sensitive PDF · no identifiers, credentials, tokens or API keys in screenshots" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeColor=#B8325B;fillColor=#FFF4F6;fontSize=12;fontStyle=1;fontColor=#812543;align=center;" vertex="1" parent="1">
+          <mxGeometry x="380" y="850" width="1200" height="44" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

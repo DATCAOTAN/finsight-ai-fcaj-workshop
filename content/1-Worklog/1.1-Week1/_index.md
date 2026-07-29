@@ -20,11 +20,11 @@ pre: " <b> 1.1. </b> "
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| Early week | I reviewed the FCAJ program outcomes and the challenges of manually examining long financial PDFs. | The project problem statement focused on secure upload, automated extraction, and structured financial analysis. |
-| Early week | I studied how project scope, target users, non-goals, and data sensitivity guide technical decisions. | The project established clear boundaries: private documents, owner-scoped access, no investment recommendations, and no unnecessary infrastructure. |
-| Midweek | I learned about AWS Regions, the shared responsibility model, IAM, least privilege, and cost awareness. | Security and cost requirements were included in the architecture before implementation began. |
-| Midweek | I practiced AWS CLI profiles and learned how AWS SAM and CloudFormation describe serverless resources as code. | The repository and SAM development environment were prepared for repeatable validation and deployment. |
-| Late week | I compared API Gateway, Lambda, S3, and DynamoDB for API, compute, storage, and metadata responsibilities. | The initial FinSight AI architecture connected these services into a secure financial-document processing foundation. |
+| Early week | Reviewed the FCAJ program outcomes and the challenges of manually examining long financial PDFs. | The project problem statement focused on secure upload, automated extraction, and structured financial analysis. |
+| Early week | Studied how project scope, target users, non-goals, and data sensitivity guide technical decisions. | The project established clear boundaries: private documents, owner-scoped access, no investment recommendations, and no unnecessary infrastructure. |
+| Midweek | Learned about AWS Regions, the shared responsibility model, IAM, least privilege, and cost awareness. | Security and cost requirements were included in the architecture before implementation began. |
+| Midweek | Practiced AWS CLI profiles and learned how AWS SAM and CloudFormation describe serverless resources as code. | The repository and SAM development environment were prepared for repeatable validation and deployment. |
+| Late week | Compared API Gateway, Lambda, S3, and DynamoDB for API, compute, storage, and metadata responsibilities. | The initial FinSight AI architecture connected these services into a secure financial-document processing foundation. |
 
 ## Week 1 Achievements
 

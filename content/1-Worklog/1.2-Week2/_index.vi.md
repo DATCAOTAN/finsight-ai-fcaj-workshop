@@ -20,11 +20,11 @@ pre: " <b> 1.2. </b> "
 
 | Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
 |---|---|---|
-| Đầu tuần | Tôi tìm hiểu S3 Block Public Access, mã hóa, versioning, quyền sở hữu đối tượng và các yếu tố về vòng đời dữ liệu. | FinSight AI lưu PDF trong bucket riêng tư, được mã hóa, có versioning và không cho phép truy cập đối tượng công khai. |
-| Đầu tuần | Tôi học cách chính sách presigned POST có ràng buộc giới hạn kích thước, MIME type, object key và header mã hóa. | Luồng tải lên cho phép gửi PDF trực tiếp tới S3 nhưng backend vẫn kiểm soát mọi trường tải lên đáng tin cậy. |
-| Giữa tuần | Tôi tìm hiểu cách kiểm tra file bằng chữ ký %PDF-, kích thước khai báo, metadata và tính toàn vẹn SHA-256. | Lambda xác nhận kiểm tra đối tượng đã tải lên trước khi chuyển tài liệu sang trạng thái đáng tin cậy. |
-| Giữa tuần | Tôi học về partition key, sort key, cập nhật có điều kiện và trạng thái vòng đời rõ ràng trong DynamoDB. | Metadata tài liệu được lưu tách biệt với nội dung PDF và được phân vùng theo chủ sở hữu đã xác thực. |
-| Cuối tuần | Tôi tìm hiểu kiểm tra request trong API Gateway và Lambda, tính idempotent, phân trang và xóa có nhận biết version. | Dự án triển khai API danh sách, chi tiết và xóa theo chủ sở hữu, hỗ trợ request lặp lại an toàn và phản hồi lỗi có cấu trúc. |
+| Đầu tuần | Tìm hiểu S3 Block Public Access, mã hóa, versioning, quyền sở hữu đối tượng và các yếu tố về vòng đời dữ liệu. | FinSight AI lưu PDF trong bucket riêng tư, được mã hóa, có versioning và không cho phép truy cập đối tượng công khai. |
+| Đầu tuần | Học cách chính sách presigned POST có ràng buộc giới hạn kích thước, MIME type, object key và header mã hóa. | Luồng tải lên cho phép gửi PDF trực tiếp tới S3 nhưng backend vẫn kiểm soát mọi trường tải lên đáng tin cậy. |
+| Giữa tuần | Tìm hiểu cách kiểm tra file bằng chữ ký %PDF-, kích thước khai báo, metadata và tính toàn vẹn SHA-256. | Lambda xác nhận kiểm tra đối tượng đã tải lên trước khi chuyển tài liệu sang trạng thái đáng tin cậy. |
+| Giữa tuần | Học về partition key, sort key, cập nhật có điều kiện và trạng thái vòng đời rõ ràng trong DynamoDB. | Metadata tài liệu được lưu tách biệt với nội dung PDF và được phân vùng theo chủ sở hữu đã xác thực. |
+| Cuối tuần | Tìm hiểu kiểm tra request trong API Gateway và Lambda, tính idempotent, phân trang và xóa có nhận biết version. | Dự án triển khai API danh sách, chi tiết và xóa theo chủ sở hữu, hỗ trợ request lặp lại an toàn và phản hồi lỗi có cấu trúc. |
 
 ## Kết quả đạt được trong Tuần 2
 

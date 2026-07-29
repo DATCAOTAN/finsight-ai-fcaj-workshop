@@ -18,11 +18,11 @@ weight: 6
 
 | Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
 |---|---|---|
-| 27/07 | Tôi đã nghiên cứu cách schema chuẩn giúp kết quả phân tích có AI trở nên ổn định cho các thành phần sử dụng phía sau. | Xác định các phần có cấu trúc cho tóm tắt, số liệu tài chính, rủi ro, cơ hội, trích dẫn và siêu dữ liệu phân tích. |
-| 28/07 | Tôi đã học cách kiểm tra schema và trích dẫn cục bộ để loại bỏ sớm đầu ra không đáng tin cậy. | Bổ sung kiểm tra schema, kiểu dữ liệu, trường bắt buộc và trích dẫn theo trang trước khi chấp nhận một kết quả phân tích. |
-| 29–30/07 | Tôi đã nghiên cứu lớp trừu tượng nhà cung cấp và rủi ro của cơ chế chuyển đổi ngầm. | Giữ Amazon Bedrock làm mặc định trong mã nguồn và mẫu triển khai, triển khai Groq dưới dạng lựa chọn phát triển không hoạt động, đồng thời không dùng cơ chế tự động chuyển nhà cung cấp. |
-| 31/07 | Tôi đã tìm hiểu cách truy cập thông tin xác thực an toàn và tách kết quả khỏi siêu dữ liệu trạng thái. | Đọc thông tin xác thực của nhà cung cấp từ AWS Secrets Manager, lưu sản phẩm kết quả trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
-| 01–02/08 | Tôi đã học cách nguồn gốc, trích dẫn và tuyên bố giới hạn hỗ trợ việc trình bày phân tích có trách nhiệm. | Bổ sung API kết quả và giao diện React với thông tin nhà cung cấp, mô hình, tham chiếu trang và tuyên bố rõ rằng đầu ra chỉ mang tính thông tin, không phải tư vấn đầu tư. |
+| 27/07 | Nghiên cứu cách schema chuẩn giúp kết quả phân tích có AI trở nên ổn định cho các thành phần sử dụng phía sau. | Xác định các phần có cấu trúc cho tóm tắt, số liệu tài chính, rủi ro, cơ hội, trích dẫn và siêu dữ liệu phân tích. |
+| 28/07 | Học cách kiểm tra schema và trích dẫn cục bộ để loại bỏ sớm đầu ra không đáng tin cậy. | Bổ sung kiểm tra schema, kiểu dữ liệu, trường bắt buộc và trích dẫn theo trang trước khi chấp nhận một kết quả phân tích. |
+| 29–30/07 | Nghiên cứu lớp trừu tượng nhà cung cấp và rủi ro của cơ chế chuyển đổi ngầm. | Giữ Amazon Bedrock làm mặc định trong mã nguồn và mẫu triển khai, triển khai Groq dưới dạng lựa chọn phát triển không hoạt động, đồng thời không dùng cơ chế tự động chuyển nhà cung cấp. |
+| 31/07 | Tìm hiểu cách truy cập thông tin xác thực an toàn và tách kết quả khỏi siêu dữ liệu trạng thái. | Đọc thông tin xác thực của nhà cung cấp từ AWS Secrets Manager, lưu sản phẩm kết quả trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
+| 01–02/08 | Học cách nguồn gốc, trích dẫn và tuyên bố giới hạn hỗ trợ việc trình bày phân tích có trách nhiệm. | Bổ sung API kết quả và giao diện React với thông tin nhà cung cấp, mô hình, tham chiếu trang và tuyên bố rõ rằng đầu ra chỉ mang tính thông tin, không phải tư vấn đầu tư. |
 
 ## Kết quả đạt được trong Tuần 6
 

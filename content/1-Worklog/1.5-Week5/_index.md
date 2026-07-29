@@ -18,11 +18,11 @@ weight: 5
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 20 July | I studied Cognito authentication and the separation between user pools, application clients, and AWS credentials. | Configured a Cognito user pool and application client for authenticated users, with no client secret in the browser and unauthenticated access disabled. |
-| 21 July | I learned how a browser can use temporary credentials to sign AWS requests safely. | Used temporary Cognito credentials to sign protected API requests with Signature Version 4. |
-| 22 July | I studied the difference between authentication, authorization, and resource ownership. | Derived the user identity from verified request context and applied owner checks to document listing, upload, status, and result operations. |
-| 23–24 July | I studied React interaction patterns for asynchronous application journeys. | Built sign-in, document list, upload, status refresh, loading, empty, success, and safe error states. |
-| 25–26 July | I learned how CloudFront can deliver a static site while its S3 origin remains private. | Served the React build through CloudFront with a private S3 origin and exercised authentication, ownership, and browser request flows. |
+| 20 July | Studied Cognito authentication and the separation between user pools, application clients, and AWS credentials. | Configured a Cognito user pool and application client for authenticated users, with no client secret in the browser and unauthenticated access disabled. |
+| 21 July | Learned how a browser can use temporary credentials to sign AWS requests safely. | Used temporary Cognito credentials to sign protected API requests with Signature Version 4. |
+| 22 July | Studied the difference between authentication, authorization, and resource ownership. | Derived the user identity from verified request context and applied owner checks to document listing, upload, status, and result operations. |
+| 23–24 July | Studied React interaction patterns for asynchronous application journeys. | Built sign-in, document list, upload, status refresh, loading, empty, success, and safe error states. |
+| 25–26 July | Learned how CloudFront can deliver a static site while its S3 origin remains private. | Served the React build through CloudFront with a private S3 origin and exercised authentication, ownership, and browser request flows. |
 
 ## Week 5 Achievements
 

@@ -18,11 +18,11 @@ weight: 6
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 27 July | I studied how a canonical schema makes AI-assisted analysis predictable for downstream systems. | Defined structured sections for summary, financial figures, risks, opportunities, citations, and analysis metadata. |
-| 28 July | I learned how local schema and citation validation can reject unreliable output early. | Added schema, type, required-field, and page-citation checks before an analysis result can be accepted. |
-| 29–30 July | I studied provider abstraction and the risks of implicit fallback behaviour. | Kept Amazon Bedrock as the source and template default, implemented Groq as an inactive development option, and avoided automatic provider fallback. |
-| 31 July | I studied safe credential access and the separation of results from status metadata. | Read provider credentials from AWS Secrets Manager, stored result artifacts in private S3, and kept status plus artifact metadata in DynamoDB. |
-| 1–2 August | I learned how provenance, citations, and disclaimers support responsible presentation of analysis. | Added the result API and React views with provider/model provenance, page references, and a clear statement that the output is informational rather than investment advice. |
+| 27 July | Studied how a canonical schema makes AI-assisted analysis predictable for downstream systems. | Defined structured sections for summary, financial figures, risks, opportunities, citations, and analysis metadata. |
+| 28 July | Learned how local schema and citation validation can reject unreliable output early. | Added schema, type, required-field, and page-citation checks before an analysis result can be accepted. |
+| 29–30 July | Studied provider abstraction and the risks of implicit fallback behaviour. | Kept Amazon Bedrock as the source and template default, implemented Groq as an inactive development option, and avoided automatic provider fallback. |
+| 31 July | Studied safe credential access and the separation of results from status metadata. | Read provider credentials from AWS Secrets Manager, stored result artifacts in private S3, and kept status plus artifact metadata in DynamoDB. |
+| 1–2 August | Learned how provenance, citations, and disclaimers support responsible presentation of analysis. | Added the result API and React views with provider/model provenance, page references, and a clear statement that the output is informational rather than investment advice. |
 
 ## Week 6 Achievements
 

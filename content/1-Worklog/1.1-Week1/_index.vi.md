@@ -20,11 +20,11 @@ pre: " <b> 1.1. </b> "
 
 | Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
 |---|---|---|
-| Đầu tuần | Tôi tìm hiểu kết quả mong đợi của chương trình FCAJ và khó khăn khi phải xem xét thủ công các tài liệu tài chính dài. | Bài toán dự án tập trung vào tải lên an toàn, trích xuất tự động và phân tích tài chính có cấu trúc. |
-| Đầu tuần | Tôi học cách phạm vi dự án, người dùng mục tiêu, nội dung không thực hiện và độ nhạy dữ liệu định hướng quyết định kỹ thuật. | Dự án xác lập các ranh giới rõ ràng: tài liệu riêng tư, truy cập theo chủ sở hữu, không đưa ra khuyến nghị đầu tư và không bổ sung hạ tầng không cần thiết. |
-| Giữa tuần | Tôi tìm hiểu AWS Regions, mô hình trách nhiệm chung, IAM, đặc quyền tối thiểu và nhận thức về chi phí. | Các yêu cầu bảo mật và chi phí được đưa vào kiến trúc trước khi bắt đầu triển khai. |
-| Giữa tuần | Tôi thực hành hồ sơ AWS CLI và tìm hiểu cách AWS SAM cùng CloudFormation mô tả tài nguyên serverless dưới dạng mã. | Kho mã và môi trường phát triển SAM được chuẩn bị để kiểm tra và triển khai có thể lặp lại. |
-| Cuối tuần | Tôi so sánh vai trò của API Gateway, Lambda, S3 và DynamoDB đối với API, xử lý, lưu trữ và metadata. | Kiến trúc FinSight AI ban đầu kết nối các dịch vụ này thành nền tảng xử lý tài liệu tài chính an toàn. |
+| Đầu tuần | Tìm hiểu kết quả mong đợi của chương trình FCAJ và khó khăn khi phải xem xét thủ công các tài liệu tài chính dài. | Bài toán dự án tập trung vào tải lên an toàn, trích xuất tự động và phân tích tài chính có cấu trúc. |
+| Đầu tuần | Học cách phạm vi dự án, người dùng mục tiêu, nội dung không thực hiện và độ nhạy dữ liệu định hướng quyết định kỹ thuật. | Dự án xác lập các ranh giới rõ ràng: tài liệu riêng tư, truy cập theo chủ sở hữu, không đưa ra khuyến nghị đầu tư và không bổ sung hạ tầng không cần thiết. |
+| Giữa tuần | Tìm hiểu AWS Regions, mô hình trách nhiệm chung, IAM, đặc quyền tối thiểu và nhận thức về chi phí. | Các yêu cầu bảo mật và chi phí được đưa vào kiến trúc trước khi bắt đầu triển khai. |
+| Giữa tuần | Thực hành hồ sơ AWS CLI và tìm hiểu cách AWS SAM cùng CloudFormation mô tả tài nguyên serverless dưới dạng mã. | Kho mã và môi trường phát triển SAM được chuẩn bị để kiểm tra và triển khai có thể lặp lại. |
+| Cuối tuần | So sánh vai trò của API Gateway, Lambda, S3 và DynamoDB đối với API, xử lý, lưu trữ và metadata. | Kiến trúc FinSight AI ban đầu kết nối các dịch vụ này thành nền tảng xử lý tài liệu tài chính an toàn. |
 
 ## Kết quả đạt được trong Tuần 1
 

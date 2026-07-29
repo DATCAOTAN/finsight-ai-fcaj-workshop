@@ -18,11 +18,11 @@ weight: 4
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 13 July | I studied how workflow orchestration makes multi-step processing visible and recoverable. | Modelled extraction, validation, analysis, and completion as explicit Step Functions states with clear success and failure paths. |
-| 14 July | I studied IAM-authenticated APIs and AWS Signature Version 4. | Configured the API to use AWS_IAM authorization for protected requests. |
-| 15 July | I learned how least-privilege boundaries reduce the impact of a compromised component. | Narrowed Lambda, queue, bucket, table, and workflow permissions to the actions and resources each component needs. |
-| 16–17 July | I studied structured logs, application metrics, and their role in troubleshooting. | Added structured logs and CloudWatch Embedded Metric Format records for document states, failures, latency, and provider activity. |
-| 18–19 July | I learned how alarms, health checks, cost review, and cleanup support operational readiness. | Added CloudWatch alarms and health checks, reviewed queue behaviour and costs, and practised cleanup and secret-scanning checks. |
+| 13 July | Studied how workflow orchestration makes multi-step processing visible and recoverable. | Modelled extraction, validation, analysis, and completion as explicit Step Functions states with clear success and failure paths. |
+| 14 July | Studied IAM-authenticated APIs and AWS Signature Version 4. | Configured the API to use AWS_IAM authorization for protected requests. |
+| 15 July | Learned how least-privilege boundaries reduce the impact of a compromised component. | Narrowed Lambda, queue, bucket, table, and workflow permissions to the actions and resources each component needs. |
+| 16–17 July | Studied structured logs, application metrics, and their role in troubleshooting. | Added structured logs and CloudWatch Embedded Metric Format records for document states, failures, latency, and provider activity. |
+| 18–19 July | Learned how alarms, health checks, cost review, and cleanup support operational readiness. | Added CloudWatch alarms and health checks, reviewed queue behaviour and costs, and practised cleanup and secret-scanning checks. |
 
 ## Week 4 Achievements
 

@@ -1,0 +1,1 @@
+# finsight-ai-fcaj-workshop

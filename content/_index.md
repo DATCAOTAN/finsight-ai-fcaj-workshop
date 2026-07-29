@@ -1,18 +1,18 @@
 ---
-title: "FinSight AI Internship Report"
+title: "Internship Report"
 date: 2026-06-22
 weight: 1
 chapter: false
 ---
 
-# FinSight AI Internship Report
+# Internship Report
 
 ## Student Information
 
 - **Full name:** Cao Tan Dat
 - **Student ID:** 3122410069
 - **Phone number:** 0394660908
-- **Email:** TODO_USER_CONFIRM_EMAIL
+- **Email:** [datcaotan117@gmail.com](mailto:datcaotan117@gmail.com)
 - **University:** Saigon University
 - **Major:** Information Technology
 - **Program class:** FCAJ-SGU-SS3
@@ -21,6 +21,10 @@ chapter: false
 - **Internship period:** 22 June 2026 to 15 August 2026
 - **Project:** FinSight AI – Serverless Financial Document Intelligence Platform on AWS
 - **Team size:** 2 members
+
+<p style="text-align: center;">
+  <img src="/images/avatar.png" alt="Student avatar" width="320">
+</p>
 
 ## Report Overview
 

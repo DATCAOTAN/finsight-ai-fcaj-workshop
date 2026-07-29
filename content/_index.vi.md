@@ -1,18 +1,18 @@
 ---
-title: "Báo cáo thực tập FinSight AI"
+title: "Báo cáo thực tập"
 date: 2026-06-22
 weight: 1
 chapter: false
 ---
 
-# Báo cáo thực tập FinSight AI
+# Báo cáo thực tập
 
 ## Thông tin sinh viên
 
 - **Họ và tên:** Cao Tấn Đạt
 - **Mã sinh viên:** 3122410069
 - **Số điện thoại:** 0394660908
-- **Email:** TODO_USER_CONFIRM_EMAIL
+- **Email:** [datcaotan117@gmail.com](mailto:datcaotan117@gmail.com)
 - **Trường:** Trường Đại học Sài Gòn
 - **Chuyên ngành:** Công nghệ thông tin
 - **Lớp chương trình:** FCAJ-SGU-SS3
@@ -21,6 +21,10 @@ chapter: false
 - **Thời gian thực tập:** Từ ngày 22/06/2026 đến ngày 15/08/2026
 - **Dự án:** FinSight AI – Nền tảng phân tích tài liệu tài chính serverless trên AWS
 - **Quy mô nhóm:** 2 thành viên
+
+<p style="text-align: center;">
+  <img src="/images/avatar.png" alt="Ảnh đại diện sinh viên" width="320">
+</p>
 
 ## Tổng quan báo cáo
 

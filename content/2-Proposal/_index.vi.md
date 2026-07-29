@@ -1,108 +1,166 @@
 ---
-title: "Bản đề xuất"
-date: 2024-01-01
+title: "Đề xuất dự án FinSight AI"
+date: 2026-07-29
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+## Nền tảng thông tin tài liệu tài chính serverless trên AWS
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+### 1. Tóm tắt dự án
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+FinSight AI hỗ trợ người dùng rà soát báo cáo tài chính công khai hoặc tổng hợp. Người dùng đã xác thực tải một tệp PDF lên vùng riêng tư; hệ thống trích xuất văn bản nhúng theo trang và AI trả kết quả có cấu trúc gồm chỉ số tài chính, xu hướng, rủi ro, bất thường, giới hạn và trích dẫn trang.
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+AWS cung cấp xác thực, phân phối frontend, API được bảo vệ, lưu trữ riêng tư, xử lý bất đồng bộ, bảo mật và giám sát. Google Gemini gemini-2.5-flash là provider development bên ngoài đang hoạt động. Amazon Bedrock vẫn là mặc định trong source/template, Groq đã được triển khai nhưng không hoạt động và không có fallback tự động.
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+PDF gốc vẫn nằm trong vùng lưu trữ AWS riêng tư. Chỉ văn bản trích xuất đáng tin cậy và metadata cần thiết được gửi đến Gemini. Kết quả hỗ trợ con người rà soát và không phải tư vấn đầu tư.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+**Quy mô nhóm:** 2 thành viên
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+### 2. Vấn đề cần giải quyết
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+#### Vấn đề là gì?
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+Báo cáo tài chính thường dài và chứa thông tin trên nhiều trang. Rà soát thủ công tốn thời gian, rủi ro quan trọng có thể bị bỏ sót và bản tóm tắt không có trích dẫn trang rất khó xác minh. Trích xuất PDF và phân tích AI cũng có thể lỗi, vượt giới hạn kích thước hoặc kéo dài hơn một yêu cầu đồng bộ thông thường.
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+#### Giải pháp
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+FinSight AI cung cấp tải lên riêng tư có xác thực, xử lý bất đồng bộ, trích xuất văn bản nhúng, phân tích AI có cấu trúc và trích dẫn theo trang. Chủ sở hữu được máy chủ suy ra, storage luôn riêng tư và phản hồi AI sai hoặc chưa hoàn chỉnh bị từ chối.
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+#### Lợi ích
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+- Giảm thời gian tìm thông tin tài chính quan trọng.
+- Giúp kiểm tra nhận định dễ hơn bằng trích dẫn trang.
+- Minh họa kiến trúc AWS serverless, hướng sự kiện và an toàn.
+- Cung cấp trạng thái xử lý rõ, retry có kiểm soát, giám sát và xóa an toàn.
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+### 3. Kiến trúc giải pháp
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+FinSight AI sử dụng kiến trúc AWS serverless để xử lý tài liệu tài chính an toàn. React/Vite frontend được CloudFront phân phối từ S3 origin riêng tư. Người dùng đã xác nhận nhận thông tin xác thực tạm từ Cognito và ký protected API request bằng SigV4. Sau khi PDF riêng tư được xác minh và tải lên, DynamoDB Streams, SQS, Lambda và Step Functions điều phối trích xuất văn bản nhúng cùng phân tích có cấu trúc. Kết quả đã kiểm tra vẫn ở trạng thái riêng tư và chỉ được trả cho chủ sở hữu tài liệu.
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+![Sơ đồ kiến trúc giải pháp FinSight AI](/images/2-Proposal/finsight-ai-architecture.svg?v=3ec0ffd1)
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+#### Các dịch vụ AWS được sử dụng
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+- **Amazon CloudFront:** Phân phối React/Vite frontend qua HTTPS từ S3 origin riêng tư.
+- **Amazon Cognito:** Xử lý xác thực email đã xác nhận và cấp thông tin xác thực AWS tạm.
+- **Amazon API Gateway:** Cung cấp REST API được bảo vệ bằng AWS_IAM.
+- **AWS Lambda:** Triển khai API tài liệu, dispatch sự kiện, trích xuất, phân tích, retry và xóa.
+- **Amazon S3:** Lưu riêng tư frontend asset, PDF gốc, extraction artifact và kết quả đã xác thực.
+- **Amazon DynamoDB:** Lưu metadata và lifecycle state theo chủ sở hữu; Streams kích hoạt xử lý.
+- **Amazon SQS:** Đệm processing message và cách ly lỗi đã hết lượt thử trong DLQ.
+- **AWS Step Functions:** Điều phối Standard workflow trích xuất và phân tích.
+- **Amazon CloudWatch:** Cung cấp log có cấu trúc, embedded metrics, 10 alarm và khả năng quan sát execution.
+- **AWS Secrets Manager:** Bảo vệ thông tin xác thực của provider bên ngoài được chọn.
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+#### Thiết kế thành phần
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+- **Giao diện web:** React/Vite hỗ trợ đăng ký, đăng nhập, tải PDF, tiến độ, kết quả, trích dẫn, retry và xóa.
+- **Xác thực:** Cognito User Pool và Identity Pool cấp thông tin xác thực tạm; trình duyệt ký API request bằng SigV4.
+- **Quản lý tài liệu:** Backend suy ra chủ sở hữu, kiểm tra PDF metadata và SHA-256, rồi lưu tệp trong S3 riêng tư có versioning.
+- **Xử lý bất đồng bộ:** DynamoDB Streams và SQS tách xác nhận tải lên khỏi Step Functions workflow idempotent.
+- **Trích xuất văn bản:** Lambda trích xuất văn bản nhúng theo trang và ghi tín hiệu chất lượng; hệ thống phát hiện nhu cầu OCR nhưng không thực thi OCR.
+- **Phân tích AI:** Cấu hình triển khai đáng tin cậy chọn Gemini gemini-2.5-flash; Bedrock vẫn là mặc định trong source/template và Groq không hoạt động.
+- **Kết quả và bảo mật:** Schema cùng trích dẫn trang được kiểm tra cục bộ, kết quả luôn riêng tư và truy cập chéo trả phản hồi không tìm thấy an toàn.
+- **Khả năng quan sát:** CloudWatch giám sát log, metrics, alarm, queue, lỗi và trạng thái workflow mà không lưu toàn bộ văn bản tài liệu trong log.
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+### 4. Triển khai kỹ thuật
+
+#### Các giai đoạn triển khai
+
+1. Xác định phạm vi dự án, kiến trúc AWS, kiểm soát IAM, kế hoạch chi phí và nền tảng AWS SAM.
+2. Triển khai tải PDF riêng tư, metadata theo chủ sở hữu, API tài liệu, idempotency và xóa an toàn.
+3. Bổ sung DynamoDB Streams, SQS/DLQ, Step Functions, trích xuất văn bản nhúng và phát hiện chất lượng.
+4. Bổ sung Cognito, browser SigV4, React frontend, phân tích AI có cấu trúc, kiểm tra trích dẫn, tích hợp Gemini, giám sát, kiểm thử và tài liệu release.
+
+#### Yêu cầu kỹ thuật
+
+- React, Vite, TypeScript, Python 3.12, AWS SAM và CloudFormation.
+- Các managed serverless service AWS được liệt kê trong kiến trúc.
+- Tệp PDF có văn bản nhúng.
+- Báo cáo công khai, tổng hợp hoặc không nhạy cảm đã được phê duyệt cho xử lý development bằng Gemini.
+
+OCR, RAG, cơ sở dữ liệu vector, khuyến nghị đầu tư, giao dịch tự động, SLA production và chứng nhận pháp lý nằm ngoài phạm vi hiện tại.
+
+### 5. Tiến độ và cột mốc
+
+- **Tuần 1 — 22/06–28/06:** xác định dự án, nền tảng AWS và kiến trúc.
+- **Tuần 2 — 29/06–05/07:** tải lên an toàn và quản lý tài liệu.
+- **Tuần 3 — 06/07–12/07:** xử lý bất đồng bộ và trích xuất PDF.
+- **Tuần 4 — 13/07–19/07:** workflow, bảo mật, giám sát, chi phí và dọn dẹp.
+- **Tuần 5 — 20/07–26/07:** Cognito, frontend, provider abstraction và phân tích có cấu trúc.
+- **Tuần 6 — 27/07–02/08:** tích hợp Gemini, phục hồi lỗi và kiểm tra ứng dụng cuối.
+- **Tuần 7 — 03/08–09/08:** báo cáo song ngữ, sơ đồ kiến trúc, ảnh chụp và review.
+- **Tuần 8 — 10/08–15/08:** kiểm tra workshop, demo, rà soát quyền riêng tư, xuất bản và nộp bài.
+
+### 6. Ước tính ngân sách
+
+Ước tính sử dụng kiến trúc hiện tại tại Asia Pacific (Singapore) và kịch bản development quy mô nhỏ:
+
+- 2 người dùng hoạt động;
+- 100 tài liệu PDF mỗi tháng, khoảng 1 MiB mỗi tệp;
+- 500 protected API request;
+- dưới 1.000 Lambda invocation và 300 GB-giây;
+- dưới 5.000 thao tác DynamoDB nhỏ;
+- 100 workflow với dưới 1.000 Step Functions state transition;
+- dưới 250 MiB dữ liệu S3 và các phiên bản;
+- dưới 1 GiB log và dữ liệu truyền qua CloudFront; và
+- 100 lần phân tích Gemini.
+
+Mức giá được đối chiếu ngày 29/07/2026 bằng [AWS Pricing Calculator](https://calculator.aws/) và trang [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing) chính thức.
+
+#### Chi phí hạ tầng ước tính mỗi tháng
+
+- **Amazon API Gateway:** 0,01 USD cho khoảng 500 REST request.
+- **AWS Lambda:** 0,01 USD cho dưới 1.000 request và 300 GB-giây.
+- **Amazon S3:** 0,02 USD cho dưới 0,25 GiB, các phiên bản và lượng request thấp.
+- **Amazon DynamoDB:** 0,01 USD cho dưới 5.000 thao tác on-demand.
+- **Amazon SQS:** 0,01 USD cho dưới 2.000 queue request.
+- **AWS Step Functions:** 0,03 USD cho dưới 1.000 Standard state transition trước khi áp dụng free tier nếu đủ điều kiện.
+- **Amazon CloudWatch:** dự phòng thận trọng 2,00 USD cho dưới 1 GiB log, embedded metrics và 10 standard alarm.
+- **Amazon CloudFront:** 0,10 USD cho dưới 10.000 request và dưới 1 GiB dữ liệu truyền.
+- **Amazon Cognito:** dự kiến 0,00 USD cho 2 monthly active user trong hạn mức áp dụng.
+- **AWS Secrets Manager:** 0,40 USD cho một Gemini secret đang hoạt động và lượng API call thấp.
+- **AWS CloudFormation:** không có phí dịch vụ bổ sung.
+
+**Tổng AWS ước tính: 2,59 USD/tháng, tương đương 31,08 USD/12 tháng trước tín dụng và thuế.**
+
+#### Chi phí AI bên ngoài
+
+Kịch bản paid tier sử dụng kết quả tài liệu dài đã xác minh gồm 67.723 input token và 609 output token cho mỗi lần phân tích. Với 100 lần phân tích bằng Gemini gemini-2.5-flash:
+
+- input: 6,7723 triệu token × 0,30 USD = 2,03 USD;
+- output: 0,0609 triệu token × 2,50 USD = 0,15 USD; và
+- **tổng Gemini ước tính: 2,18 USD/tháng, tương đương 26,21 USD/12 tháng.**
+
+Gemini Free Tier có thể giảm khoản này về 0 USD khi còn đủ điều kiện, nhưng quota miễn phí và chính sách giá không được bảo đảm.
+
+#### Tổng ngân sách dự kiến
+
+**Tổng kết hợp ước tính: 4,77 USD/tháng, tương đương 57,29 USD/12 tháng.**
+
+Chương trình học AWS cung cấp 200 USD tín dụng khuyến mại. Với kịch bản này, phần chi phí AWS nằm trong giới hạn đó, nhưng tín dụng AWS không thanh toán chi phí Gemini bên ngoài. Điều kiện áp dụng, ngày hết hạn tín dụng, thuế, mức sử dụng thực tế và giá tương lai phải được kiểm tra riêng. Dự án không lên kế hoạch mua phần cứng chuyên dụng.
+
+### 7. Đánh giá rủi ro
+
+#### Rủi ro chính
+
+- Bedrock inference vẫn bị chặn bởi quota cấp tài khoản.
+- Văn bản trích xuất rời AWS khi Gemini hoạt động.
+- Đầu ra AI có thể không chính xác, sai định dạng, chưa hoàn chỉnh hoặc trích dẫn sai.
+- Provider rate limit, gián đoạn và giới hạn đầu vào có thể làm ngắt phân tích.
+- PDF quét cần OCR nhưng OCR chưa được triển khai.
+- Truy cập trái phép, lộ bí mật, sự kiện trùng, workflow lỗi, chi phí ngoài dự kiến và chậm tiến độ vẫn có thể xảy ra.
+
+#### Biện pháp giảm thiểu
+
+FinSight AI dùng private storage, xác thực email đã xác nhận, thông tin xác thực tạm, chủ sở hữu do máy chủ suy ra, kiểm tra schema và trích dẫn, giới hạn máy chủ 1.000.000 ký tự, retry có kiểm soát, DLQ, CloudWatch alarm, Secrets Manager, log an toàn về quyền riêng tư và dữ liệu development công khai hoặc tổng hợp. Không rủi ro nào được xem là đã loại bỏ hoàn toàn.
+
+### 8. Kết quả mong đợi
+
+- Workflow an toàn từ xác thực người dùng và tải PDF riêng tư đến phân tích có cấu trúc và xóa an toàn.
+- Thông tin tài chính có trích dẫn trang và nguồn gốc provider/model.
+- Serverless infrastructure, giám sát, kiểm thử, kiểm soát chi phí và dọn dẹp có thể lặp lại.
+- Báo cáo và workshop FCAJ song ngữ để trình diễn workflow development đã xác minh.
+- Tài liệu học AWS thực tế, đồng thời thể hiện rõ yêu cầu con người rà soát và giới hạn hệ thống hiện tại.

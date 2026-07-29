@@ -1,115 +1,166 @@
 ---
-title: "Proposal"
-date: 2024-01-01
+title: "FinSight AI Project Proposal"
+date: 2026-07-29
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+## Serverless Financial Document Intelligence Platform on AWS
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+
+FinSight AI helps users review public or synthetic financial reports. An authenticated user uploads a private PDF, the system extracts embedded text by page, and AI returns a structured analysis with financial metrics, trends, risks, anomalies, limitations, and page citations.
+
+AWS provides authentication, frontend delivery, protected APIs, private storage, asynchronous processing, security, and monitoring. Google Gemini gemini-2.5-flash is the active external development provider. Amazon Bedrock remains the source/template default, Groq is implemented but inactive, and there is no automatic provider fallback.
+
+The original PDF remains in private AWS storage. Only trusted extracted text and required metadata are sent to Gemini. Results support human review and are not investment advice.
+
+**Team size:** 2 members
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+#### What is the problem?
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+Financial reports are often long and contain information across many pages. Manual review takes time, important risks may be overlooked, and summaries without page citations are difficult to verify. PDF extraction and AI analysis can also fail, exceed size limits, or take longer than a normal synchronous request.
+
+#### The solution
+
+FinSight AI provides authenticated private upload, asynchronous processing, embedded-text extraction, structured AI analysis, and page-level citations. Ownership is derived by the server, storage remains private, and invalid or incomplete AI responses are rejected.
+
+#### Benefits
+
+- Reduces the time needed to find important financial information.
+- Makes findings easier to verify through page citations.
+- Demonstrates a secure AWS serverless and event-driven architecture.
+- Provides clear processing states, controlled retry, monitoring, and safe deletion.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+FinSight AI uses a serverless AWS architecture for secure financial-document processing. The React/Vite frontend is delivered through CloudFront from a private S3 origin. Confirmed users receive temporary credentials from Cognito and sign protected API requests with SigV4. After a verified private PDF upload, DynamoDB Streams, SQS, Lambda, and Step Functions coordinate embedded-text extraction and structured analysis. Validated results remain private and are returned only to the document owner.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![FinSight AI solution architecture](/images/2-Proposal/finsight-ai-architecture.svg?v=3ec0ffd1)
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+#### AWS Services Used
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Amazon CloudFront:** Delivers the React/Vite frontend through HTTPS from a private S3 origin.
+- **Amazon Cognito:** Handles confirmed-email authentication and temporary AWS credentials.
+- **Amazon API Gateway:** Provides the REST API protected by AWS_IAM.
+- **AWS Lambda:** Implements document APIs, event dispatch, extraction, analysis, retry, and deletion.
+- **Amazon S3:** Privately stores frontend assets, original PDFs, extraction artifacts, and validated results.
+- **Amazon DynamoDB:** Stores owner-scoped metadata and lifecycle state; Streams trigger processing.
+- **Amazon SQS:** Buffers processing messages and isolates exhausted failures in a DLQ.
+- **AWS Step Functions:** Orchestrates the Standard extraction and analysis workflow.
+- **Amazon CloudWatch:** Provides structured logs, embedded metrics, 10 alarms, and execution visibility.
+- **AWS Secrets Manager:** Protects the selected external-provider credential.
+
+#### Component Design
+
+- **Web interface:** React/Vite supports registration, sign-in, PDF upload, progress, results, citations, retry, and deletion.
+- **Authentication:** Cognito User Pool and Identity Pool issue temporary credentials; the browser signs API requests with SigV4.
+- **Document management:** The backend derives ownership, verifies PDF metadata and SHA-256, and stores files in private, versioned S3.
+- **Asynchronous processing:** DynamoDB Streams and SQS decouple upload confirmation from an idempotent Step Functions workflow.
+- **Text extraction:** Lambda extracts embedded text by page and records quality signals; OCR is detected as required but is not executed.
+- **AI analysis:** Trusted deployment configuration selects Gemini gemini-2.5-flash; Bedrock remains the source/template default and Groq remains inactive.
+- **Result and security:** Schema and page citations are validated locally, results remain private, and foreign access returns a safe not-found response.
+- **Observability:** CloudWatch monitors logs, metrics, alarms, queues, failures, and workflow state without storing full document text in logs.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+#### Implementation phases
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+1. Define the project scope, AWS architecture, IAM controls, cost plan, and AWS SAM foundation.
+2. Implement private PDF upload, owner-scoped metadata, document APIs, idempotency, and safe deletion.
+3. Add DynamoDB Streams, SQS/DLQ, Step Functions, embedded-text extraction, and quality detection.
+4. Add Cognito, browser SigV4, the React frontend, structured AI analysis, citation validation, Gemini integration, monitoring, testing, and release documentation.
+
+#### Technical requirements
+
+- React, Vite, TypeScript, Python 3.12, AWS SAM, and CloudFormation.
+- AWS managed serverless services listed in the architecture.
+- PDF files with embedded text.
+- Public, synthetic, or approved non-sensitive reports for Gemini development processing.
+
+OCR, RAG, vector databases, investment recommendations, automatic trading, production SLA, and legal certification are outside the current scope.
+
+### 5. Timeline and Milestones
+
+- **Week 1 — 22/06–28/06:** project definition, AWS foundation, and architecture.
+- **Week 2 — 29/06–05/07:** secure upload and document management.
+- **Week 3 — 06/07–12/07:** asynchronous processing and PDF extraction.
+- **Week 4 — 13/07–19/07:** workflow, security, monitoring, cost, and cleanup.
+- **Week 5 — 20/07–26/07:** Cognito, frontend, provider abstraction, and structured analysis.
+- **Week 6 — 27/07–02/08:** Gemini integration, failure recovery, and final application validation.
+- **Week 7 — 03/08–09/08:** bilingual report, architecture diagram, screenshots, and review.
+- **Week 8 — 10/08–15/08:** workshop validation, demo, privacy review, publication, and submission.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+The estimate uses the current architecture in Asia Pacific (Singapore) and a low-volume development workload:
 
-Total: $0.7/month, $8.40/12 months
+- 2 active users;
+- 100 PDF documents per month, approximately 1 MiB each;
+- 500 protected API requests;
+- fewer than 1,000 Lambda invocations and 300 GB-seconds;
+- fewer than 5,000 small DynamoDB operations;
+- 100 workflows with fewer than 1,000 Step Functions transitions;
+- less than 250 MiB of S3 data and versions;
+- less than 1 GiB of logs and CloudFront transfer; and
+- 100 Gemini analyses.
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+Prices were reviewed on 29 July 2026 using the [AWS Pricing Calculator](https://calculator.aws/) and official [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing).
+
+#### Estimated monthly infrastructure cost
+
+- **Amazon API Gateway:** USD 0.01 for approximately 500 REST requests.
+- **AWS Lambda:** USD 0.01 for fewer than 1,000 requests and 300 GB-seconds.
+- **Amazon S3:** USD 0.02 for less than 0.25 GiB, versions, and low request volume.
+- **Amazon DynamoDB:** USD 0.01 for fewer than 5,000 on-demand operations.
+- **Amazon SQS:** USD 0.01 for fewer than 2,000 queue requests.
+- **AWS Step Functions:** USD 0.03 for fewer than 1,000 Standard state transitions before any applicable free tier.
+- **Amazon CloudWatch:** USD 2.00 conservative allowance for less than 1 GiB of logs, embedded metrics, and 10 standard alarms.
+- **Amazon CloudFront:** USD 0.10 for fewer than 10,000 requests and less than 1 GiB transfer.
+- **Amazon Cognito:** USD 0.00 expected for 2 monthly active users under the applicable allowance.
+- **AWS Secrets Manager:** USD 0.40 for one active Gemini secret and low API-call volume.
+- **AWS CloudFormation:** no additional service charge.
+
+**Estimated AWS subtotal: USD 2.59/month, or USD 31.08/12 months before credits and tax.**
+
+#### External AI cost
+
+The paid-tier planning case uses the verified long-document result of 67,723 input tokens and 609 output tokens per analysis. For 100 analyses with Gemini gemini-2.5-flash:
+
+- input: 6.7723 million tokens × USD 0.30 = USD 2.03;
+- output: 0.0609 million tokens × USD 2.50 = USD 0.15; and
+- **estimated Gemini total: USD 2.18/month, or USD 26.21/12 months.**
+
+Gemini Free Tier could reduce this amount to USD 0 while eligible, but free quota and pricing are not guaranteed.
+
+#### Total planning estimate
+
+**Estimated combined total: USD 4.77/month, or USD 57.29/12 months.**
+
+The AWS learning program provides USD 200 in promotional credits. Based on this workload, the estimated AWS portion is within that ceiling, but AWS credits do not pay the external Gemini charge. Credit eligibility, expiry, tax, actual usage, and future pricing must be checked separately. No dedicated hardware purchase is planned.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+#### Main risks
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+- Bedrock inference remains blocked by account-level quota.
+- Extracted text leaves AWS when Gemini is active.
+- AI output may be inaccurate, malformed, incomplete, or incorrectly cited.
+- Provider rate limits, outages, and input limits may interrupt analysis.
+- Scanned PDFs require OCR, which is not implemented.
+- Unauthorized access, secret exposure, duplicate events, workflow failure, unexpected cost, and schedule delay remain possible.
+
+#### Mitigation
+
+FinSight AI uses private storage, confirmed-email authentication, temporary credentials, server-derived ownership, schema and citation validation, a 1,000,000-character server limit, controlled retry, DLQ, CloudWatch alarms, Secrets Manager, privacy-safe logs, and public or synthetic development data. No risk is considered completely eliminated.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+
+- A secure workflow from user authentication and private PDF upload to structured analysis and safe deletion.
+- Financial findings with page citations and provider/model provenance.
+- Repeatable serverless infrastructure, monitoring, testing, cost controls, and cleanup.
+- A bilingual FCAJ report and workshop for demonstrating the verified development workflow.
+- A practical AWS learning reference while keeping human review and current system limitations explicit.

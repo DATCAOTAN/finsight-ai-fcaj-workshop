@@ -1,59 +1,35 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.3. </b> "
+title: "Nhật ký Tuần 3"
+date: 2026-07-06
+weight: 3
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+**Thời gian:** 06–12/07/2026
 
-### Mục tiêu tuần 3:
+## Mục tiêu Tuần 3
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu xử lý hướng sự kiện với Amazon S3, EventBridge, Amazon SQS và AWS Lambda.
+- Hiểu cơ chế thử lại, thời gian ẩn thông điệp, hàng đợi lỗi và xử lý idempotent.
+- Học cách trích xuất văn bản nhúng trong PDF và đánh giá chất lượng theo từng trang.
+- Xây dựng vòng đời xử lý tài liệu ổn định từ lúc tải lên đến khi có văn bản trích xuất.
+- Giữ tệp tài liệu và sản phẩm trung gian ở chế độ riêng tư, chỉ công khai siêu dữ liệu an toàn.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Nội dung học tập và công việc triển khai
 
+| Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
+|---|---|---|
+| 06/07 | Tôi đã nghiên cứu cách sự kiện S3 tạo thay đổi trạng thái mà không ghép nối trực tiếp các dịch vụ. | Kết nối lượt tải lên S3 đã được xác nhận với quy tắc EventBridge để quy trình chỉ bắt đầu sau khi đối tượng thực sự xuất hiện. |
+| 07/07 | Tôi đã tìm hiểu thời gian ẩn, cơ chế thử lại và hàng đợi lỗi của SQS để phân phối bất đồng bộ bền vững. | Cấu hình hàng đợi xử lý để hấp thụ tải đột biến và cô lập lỗi lặp lại. |
+| 08/07 | Tôi đã học vì sao consumer cần có tính idempotent khi thông điệp có thể được gửi nhiều lần. | Bổ sung kiểm tra vòng đời để thông điệp gửi trùng không khởi động lại tài liệu đang xử lý hoặc đã hoàn tất. |
+| 09–10/07 | Tôi đã nghiên cứu cách trích xuất văn bản nhúng trong PDF và giá trị của việc giữ ranh giới trang. | Dùng pypdf để lấy văn bản nhúng theo từng trang và giữ số trang cho phần trích dẫn sau này. |
+| 11–12/07 | Tôi đã học cách cổng kiểm tra chất lượng và sản phẩm riêng tư hỗ trợ xử lý tài liệu an toàn. | Bổ sung kiểm tra văn bản rỗng hoặc không sử dụng được, lưu nội dung trích xuất trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
 
-### Kết quả đạt được tuần 3:
+## Kết quả đạt được trong Tuần 3
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Hoàn thiện luồng hướng sự kiện từ lượt tải lên đã xác nhận đến hàng đợi xử lý tài liệu.
+- Bổ sung cơ chế xử lý SQS có thử lại và hàng đợi lỗi cho các thông điệp thất bại nhiều lần.
+- Làm cho consumer có tính idempotent để sự kiện trùng không tạo công việc trùng.
+- Trích xuất văn bản nhúng trong PDF nhưng vẫn giữ ranh giới trang, tạo nền tảng cho phân tích có thể truy vết.
+- Xử lý rõ ràng các PDF mã hóa, không đọc được, chỉ chứa ảnh hoặc có văn bản không sử dụng được thay vì âm thầm tạo kết quả kém.
+- Giữ PDF gốc và sản phẩm trích xuất ở chế độ riêng tư trong S3, còn ứng dụng chỉ trả về thông tin trạng thái an toàn.
+- Thiết lập các trạng thái tài liệu rõ ràng để API và giao diện ở giai đoạn sau có thể hiển thị nhất quán.

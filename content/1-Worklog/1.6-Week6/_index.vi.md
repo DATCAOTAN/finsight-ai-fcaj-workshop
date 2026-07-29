@@ -1,58 +1,35 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.6. </b> "
+title: "Nhật ký Tuần 6"
+date: 2026-07-27
+weight: 6
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+**Thời gian:** 27/07–02/08/2026
 
-### Mục tiêu tuần 6:
+## Mục tiêu Tuần 6
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Xác định đầu ra có cấu trúc và ổn định cho việc phân tích tài liệu tài chính.
+- Nghiên cứu kiểm tra schema, kiểm tra trích dẫn và giới hạn rõ ràng cho nội dung do AI tạo.
+- Tách các tích hợp nhà cung cấp phân tích qua một ranh giới thống nhất.
+- Bảo vệ thông tin xác thực của nhà cung cấp và ghi nhận nguồn gốc hữu ích mà không lộ bí mật.
+- Trình bày kết quả phân tích rõ ràng nhưng không đưa ra khuyến nghị đầu tư.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Nội dung học tập và công việc triển khai
 
+| Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
+|---|---|---|
+| 27/07 | Tôi đã nghiên cứu cách schema chuẩn giúp kết quả phân tích có AI trở nên ổn định cho các thành phần sử dụng phía sau. | Xác định các phần có cấu trúc cho tóm tắt, số liệu tài chính, rủi ro, cơ hội, trích dẫn và siêu dữ liệu phân tích. |
+| 28/07 | Tôi đã học cách kiểm tra schema và trích dẫn cục bộ để loại bỏ sớm đầu ra không đáng tin cậy. | Bổ sung kiểm tra schema, kiểu dữ liệu, trường bắt buộc và trích dẫn theo trang trước khi chấp nhận một kết quả phân tích. |
+| 29–30/07 | Tôi đã nghiên cứu lớp trừu tượng nhà cung cấp và rủi ro của cơ chế chuyển đổi ngầm. | Giữ Amazon Bedrock làm mặc định trong mã nguồn và mẫu triển khai, triển khai Groq dưới dạng lựa chọn phát triển không hoạt động, đồng thời không dùng cơ chế tự động chuyển nhà cung cấp. |
+| 31/07 | Tôi đã tìm hiểu cách truy cập thông tin xác thực an toàn và tách kết quả khỏi siêu dữ liệu trạng thái. | Đọc thông tin xác thực của nhà cung cấp từ AWS Secrets Manager, lưu sản phẩm kết quả trong S3 riêng tư và chỉ giữ trạng thái cùng siêu dữ liệu sản phẩm trong DynamoDB. |
+| 01–02/08 | Tôi đã học cách nguồn gốc, trích dẫn và tuyên bố giới hạn hỗ trợ việc trình bày phân tích có trách nhiệm. | Bổ sung API kết quả và giao diện React với thông tin nhà cung cấp, mô hình, tham chiếu trang và tuyên bố rõ rằng đầu ra chỉ mang tính thông tin, không phải tư vấn đầu tư. |
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Kết quả đạt được trong Tuần 6
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Thiết lập một định dạng phân tích chuẩn để backend, lớp lưu trữ, kiểm thử và frontend cùng sử dụng.
+- Từ chối kết quả sai cấu trúc ngay tại ứng dụng trước khi có thể hiển thị như một phân tích hoàn tất.
+- Giữ tham chiếu trang để người dùng có thể đối chiếu các nhận định quan trọng với văn bản trích xuất từ tài liệu.
+- Cô lập xử lý yêu cầu và phản hồi riêng của từng nhà cung cấp sau một ranh giới rõ ràng.
+- Giữ Bedrock làm mặc định trong mã nguồn và mẫu triển khai, còn Groq đã được triển khai nhưng không hoạt động; mọi thay đổi nhà cung cấp đều phải thực hiện rõ ràng và không có tự động chuyển đổi.
+- Lưu sản phẩm phân tích ở chế độ riêng tư, chỉ trả kết quả đã được phân quyền cùng siêu dữ liệu nguồn gốc an toàn.
+- Trình bày tóm tắt, số liệu, rủi ro và cơ hội như nội dung phân tích tài liệu, kèm tuyên bố rõ ràng rằng hệ thống không đưa ra khuyến nghị đầu tư.

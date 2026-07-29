@@ -1,57 +1,35 @@
 ---
 title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.5. </b> "
+date: 2026-07-20
+weight: 5
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Period:** 20–26 July 2026
 
-### Week 5 Objectives:
+## Week 5 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Study Amazon Cognito user pools and the difference between authentication and authorization.
+- Learn how a browser can call an IAM-protected API without embedding long-lived credentials.
+- Build the main React journeys for signing in, uploading, and tracking documents.
+- Enforce document ownership on the server rather than trusting browser-supplied identity.
+- Deliver the frontend through private S3 storage and Amazon CloudFront.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Learning and implementation activities
 
+| Time | Learning topic | FinSight AI implementation activity |
+|---|---|---|
+| 20 July | I studied Cognito authentication and the separation between user pools, application clients, and AWS credentials. | Configured a Cognito user pool and application client for authenticated users, with no client secret in the browser and unauthenticated access disabled. |
+| 21 July | I learned how a browser can use temporary credentials to sign AWS requests safely. | Used temporary Cognito credentials to sign protected API requests with Signature Version 4. |
+| 22 July | I studied the difference between authentication, authorization, and resource ownership. | Derived the user identity from verified request context and applied owner checks to document listing, upload, status, and result operations. |
+| 23–24 July | I studied React interaction patterns for asynchronous application journeys. | Built sign-in, document list, upload, status refresh, loading, empty, success, and safe error states. |
+| 25–26 July | I learned how CloudFront can deliver a static site while its S3 origin remains private. | Served the React build through CloudFront with a private S3 origin and exercised authentication, ownership, and browser request flows. |
 
-### Week 5 Achievements:
+## Week 5 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Added Cognito-based sign-in with short-lived AWS credentials for browser sessions.
+- Kept long-lived secrets and application-client secrets out of the frontend.
+- Signed protected browser requests for the IAM-authorized API.
+- Enforced ownership from server-verified identity instead of accepting an owner identifier from the client.
+- Completed the core document-management interface, including upload progress and understandable status feedback.
+- Added calm loading, empty, and error states so expected failures remain clear to users.
+- Published the frontend through CloudFront while keeping the underlying S3 origin private.

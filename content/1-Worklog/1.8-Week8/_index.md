@@ -1,57 +1,37 @@
 ---
 title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.8. </b> "
+date: 2026-08-10
+publishDate: 2026-07-29
+weight: 8
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Period:** 10–15 August 2026
 
-### Week 8 Objectives:
+## Week 8 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Validate authentication, ownership isolation, and private-storage controls end to end.
+- Confirm workflow health, alarms, queue behaviour, and safe failure responses.
+- Run the complete backend and frontend test suites and review coverage.
+- Verify the deployed infrastructure and remove temporary validation resources.
+- Finish the bilingual architecture, usage, and internship-learning documentation.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Learning and implementation activities
 
+| Time | Learning topic | FinSight AI implementation activity |
+|---|---|---|
+| 10 August | I studied multi-user authorization tests as a way to verify owner isolation. | Tested two-user document isolation and confirmed that cross-owner access returns a safe not-found response. |
+| 11 August | I learned how negative security tests verify protected requests and private storage. | Confirmed unsigned API requests and direct access to private S3 objects are denied, while authenticated retry paths remain usable. |
+| 12 August | I studied how logs, workflow history, queues, health responses, and alarms provide complementary operational signals. | Reviewed each signal for normal and failure scenarios. |
+| 13 August | I learned why cleanup is part of a complete validation cycle. | Removed temporary documents, queue messages, test identities, and other validation artifacts without disturbing deployed application resources. |
+| 14 August | I studied how test counts and coverage support a final quality assessment. | Ran 288 backend tests with 86% coverage and 22 frontend tests, then reviewed the remaining failures and warnings. |
+| 15 August | I learned how release documentation connects architecture, operation, validation, and project handover. | Updated the architecture and bilingual Hugo content, verified the deployment, and performed the final release-readiness checklist. |
 
-### Week 8 Achievements:
+## Week 8 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Confirmed owner isolation with two user accounts and safe responses for unauthorized document access.
+- Verified that unsigned protected requests and direct access to private S3 content are denied as intended.
+- Reconfirmed both Week 7 size-boundary outcomes: the 214,091-character document reached ANALYZED with one Gemini request, while the 1,368,551-character document returned ANALYSIS_INPUT_TOO_LARGE with zero provider requests.
+- Completed 288 backend tests with 86% coverage and 22 frontend tests.
+- Verified the deployed stack at UPDATE_COMPLETE with 73 resources healthy and all 10 CloudWatch alarms in OK.
+- Cleaned up temporary validation data and resources after the final checks.
+- Completed the bilingual worklog and supporting documentation with the architecture described accurately as AWS-based infrastructure plus the external Gemini development provider, not as a fully AWS-native solution.

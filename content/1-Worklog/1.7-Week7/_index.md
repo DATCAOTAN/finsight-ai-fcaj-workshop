@@ -1,57 +1,37 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.7. </b> "
+date: 2026-08-03
+publishDate: 2026-07-29
+weight: 7
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Period:** 3–9 August 2026
 
-### Week 7 Objectives:
+## Week 7 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Complete self-service registration and email-confirmation flows.
+- Make document failures understandable, recoverable, and safe to retry.
+- Activate Gemini through the existing provider boundary for development validation.
+- Define and enforce the data-egress boundary for external analysis.
+- Validate both a successful long-document path and an oversized-input rejection path.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Learning and implementation activities
 
+| Time | Learning topic | FinSight AI implementation activity |
+|---|---|---|
+| 3 August | I studied the Cognito registration and email-confirmation lifecycle. | Added Cognito self-registration, email confirmation, resend, and sign-in guidance while keeping unconfirmed accounts blocked. |
+| 4 August | I learned how authentication feedback can remain useful without exposing sensitive account details. | Mapped common registration and confirmation failures to safe, understandable messages. |
+| 5 August | I studied failure classification, retry cooldowns, and attempt limits for controlled recovery. | Classified processing failures and allowed only eligible failed documents to re-enter the workflow. |
+| 6 August | I studied the trust boundary created when an external provider analyzes application data. | Activated Gemini gemini-2.5-flash through the provider abstraction and verified that original PDF binaries remain in AWS; only trusted, extracted page text is sent for analysis. |
+| 7 August | I learned why input limits must be enforced before a provider request is made. | Enforced the 1,000,000-character analysis limit with explicit rejection instead of silent truncation or automatic fallback. |
+| 8–9 August | I studied boundary testing with representative long and oversized documents. | Ran a 214,091-character document through one Gemini request and exercised a 1,368,551-character document that was rejected before any provider request. |
 
-### Week 7 Achievements:
+## Week 7 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Completed user registration, confirmation, resend, and sign-in transitions with safe handling for unconfirmed accounts.
+- Added understandable error messages for expected authentication and registration conditions.
+- Introduced controlled recovery for eligible document failures with cooldown and maximum-attempt safeguards.
+- Activated Gemini gemini-2.5-flash as the development analysis provider without changing the explicit provider-selection model or adding automatic fallback.
+- Kept original PDF binaries inside AWS and limited external transmission to trusted extracted page text, making the hybrid AWS-and-Gemini boundary clear.
+- Successfully processed a 214,091-character document to ANALYZED with exactly one Gemini provider request.
+- Rejected a 1,368,551-character document as ANALYSIS_INPUT_TOO_LARGE with zero provider requests, confirming that oversized input is neither truncated nor sent externally.

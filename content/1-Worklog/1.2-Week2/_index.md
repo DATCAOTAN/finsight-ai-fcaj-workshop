@@ -22,7 +22,7 @@ pre: " <b> 1.2. </b> "
 |---|---|---|
 | Early week | I studied S3 Block Public Access, encryption, versioning, object ownership, and lifecycle considerations. | FinSight AI stored PDFs in a private, encrypted, versioned bucket with no public object access. |
 | Early week | I learned how constrained presigned POST policies limit file size, MIME type, object key, and encryption headers. | The upload flow allowed direct PDF transfer to S3 while keeping the backend in control of every trusted upload field. |
-| Midweek | I studied file validation using the `%PDF-` signature, declared size, metadata, and SHA-256 integrity. | Lambda confirmation verified the uploaded object before moving the document into a trusted state. |
+| Midweek | I studied file validation using the %PDF- signature, declared size, metadata, and SHA-256 integrity. | Lambda confirmation verified the uploaded object before moving the document into a trusted state. |
 | Midweek | I learned DynamoDB partition and sort keys, conditional updates, and explicit lifecycle states. | Document metadata was stored separately from PDF contents and partitioned by authenticated owner. |
 | Late week | I studied API Gateway and Lambda request validation, idempotency, pagination, and version-aware deletion. | The project implemented owner-scoped list, detail, and delete APIs with safe repeated requests and structured error responses. |
 

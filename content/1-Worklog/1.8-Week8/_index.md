@@ -30,8 +30,8 @@ weight: 8
 
 - Confirmed owner isolation with two user accounts and safe responses for unauthorized document access.
 - Verified that unsigned protected requests and direct access to private S3 content are denied as intended.
-- Reconfirmed both Week 7 size-boundary outcomes: the 214,091-character document reached `ANALYZED` with one Gemini request, while the 1,368,551-character document returned `ANALYSIS_INPUT_TOO_LARGE` with zero provider requests.
+- Reconfirmed both Week 7 size-boundary outcomes: the 214,091-character document reached ANALYZED with one Gemini request, while the 1,368,551-character document returned ANALYSIS_INPUT_TOO_LARGE with zero provider requests.
 - Completed 288 backend tests with 86% coverage and 22 frontend tests.
-- Verified the deployed stack at `UPDATE_COMPLETE` with 73 resources healthy and all 10 CloudWatch alarms in `OK`.
+- Verified the deployed stack at UPDATE_COMPLETE with 73 resources healthy and all 10 CloudWatch alarms in OK.
 - Cleaned up temporary validation data and resources after the final checks.
 - Completed the bilingual worklog and supporting documentation with the architecture described accurately as AWS-based infrastructure plus the external Gemini development provider, not as a fully AWS-native solution.

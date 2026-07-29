@@ -30,8 +30,8 @@ weight: 8
 
 - Xác nhận khả năng cô lập chủ sở hữu bằng hai tài khoản và phản hồi an toàn khi truy cập tài liệu không được phép.
 - Xác minh yêu cầu được bảo vệ nhưng không ký và truy cập trực tiếp nội dung S3 riêng tư đều bị từ chối đúng thiết kế.
-- Xác nhận lại hai kết quả biên ở Tuần 7: tài liệu 214.091 ký tự đạt trạng thái `ANALYZED` với một yêu cầu Gemini, còn tài liệu 1.368.551 ký tự trả về `ANALYSIS_INPUT_TOO_LARGE` mà không có yêu cầu nào tới nhà cung cấp.
+- Xác nhận lại hai kết quả biên ở Tuần 7: tài liệu 214.091 ký tự đạt trạng thái ANALYZED với một yêu cầu Gemini, còn tài liệu 1.368.551 ký tự trả về ANALYSIS_INPUT_TOO_LARGE mà không có yêu cầu nào tới nhà cung cấp.
 - Hoàn tất 288 kiểm thử backend với độ bao phủ 86% và 22 kiểm thử frontend.
-- Xác minh stack triển khai ở trạng thái `UPDATE_COMPLETE` với 73 tài nguyên hoạt động ổn định và cả 10 cảnh báo CloudWatch ở trạng thái `OK`.
+- Xác minh stack triển khai ở trạng thái UPDATE_COMPLETE với 73 tài nguyên hoạt động ổn định và cả 10 cảnh báo CloudWatch ở trạng thái OK.
 - Dọn dẹp dữ liệu và tài nguyên xác thực tạm thời sau các bước kiểm tra cuối.
 - Hoàn thiện nhật ký cùng tài liệu hỗ trợ song ngữ, mô tả chính xác kiến trúc là hạ tầng trên AWS kết hợp với nhà cung cấp Gemini bên ngoài trong môi trường phát triển, không phải giải pháp thuần AWS.

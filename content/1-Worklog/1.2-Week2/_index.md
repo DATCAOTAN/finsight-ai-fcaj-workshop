@@ -1,57 +1,37 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-29
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+**Period:** 29 Jun 2026 – 05 Jul 2026
 
-### Week 2 Objectives:
+## Week 2 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Learn private and versioned Amazon S3 storage.
+- Build a secure browser-to-S3 PDF upload flow.
+- Design DynamoDB document metadata and lifecycle states.
+- Implement owner-scoped document APIs.
+- Apply idempotency and safe deletion.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+## Learning and implementation activities
 
+| Time | Learning topic | FinSight AI implementation activity |
+|---|---|---|
+| Early week | I studied S3 Block Public Access, encryption, versioning, object ownership, and lifecycle considerations. | FinSight AI stored PDFs in a private, encrypted, versioned bucket with no public object access. |
+| Early week | I learned how constrained presigned POST policies limit file size, MIME type, object key, and encryption headers. | The upload flow allowed direct PDF transfer to S3 while keeping the backend in control of every trusted upload field. |
+| Midweek | I studied file validation using the `%PDF-` signature, declared size, metadata, and SHA-256 integrity. | Lambda confirmation verified the uploaded object before moving the document into a trusted state. |
+| Midweek | I learned DynamoDB partition and sort keys, conditional updates, and explicit lifecycle states. | Document metadata was stored separately from PDF contents and partitioned by authenticated owner. |
+| Late week | I studied API Gateway and Lambda request validation, idempotency, pagination, and version-aware deletion. | The project implemented owner-scoped list, detail, and delete APIs with safe repeated requests and structured error responses. |
 
-### Week 2 Achievements:
+## Week 2 Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Implemented secure PDF upload without making the S3 bucket or objects public.
+- Stored document metadata separately from PDF contents in DynamoDB.
+- Completed owner-scoped list, detail, pagination, and delete operations.
+- Prevented cross-user document access by deriving ownership from authenticated request context.
+- Added idempotent creation, confirmation, and deletion behavior for safe retries.
+- Verified upload and document-management behavior with local and AWS integration tests.
+- Learned that upload security requires coordinated controls across API Gateway, Lambda, IAM, DynamoDB, and S3.

@@ -1,58 +1,37 @@
 ---
-title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.6. </b> "
+title: "Nhật ký Tuần 6"
+date: 2026-07-27
+weight: 6
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+**Thời gian:** 27/07–02/08/2026
 
-### Mục tiêu tuần 6:
+**Trạng thái tại ngày 29/07/2026:** Đang thực hiện
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+## Mục tiêu Tuần 6
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+- Xác định đầu ra có cấu trúc và ổn định cho việc phân tích tài liệu tài chính.
+- Nghiên cứu kiểm tra schema, kiểm tra trích dẫn và giới hạn rõ ràng cho nội dung do AI tạo.
+- Tách các tích hợp nhà cung cấp phân tích qua một ranh giới thống nhất.
+- Bảo vệ thông tin xác thực của nhà cung cấp và ghi nhận nguồn gốc hữu ích mà không lộ bí mật.
+- Trình bày kết quả phân tích rõ ràng nhưng không đưa ra khuyến nghị đầu tư.
 
+## Nội dung học tập và công việc triển khai
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Thời gian | Trạng thái | Nội dung học tập | Công việc áp dụng vào FinSight AI |
+|---|---|---|---|
+| 27/07 | Đã hoàn thành | Tôi đã nghiên cứu cách schema chuẩn giúp kết quả phân tích có AI trở nên ổn định cho các thành phần sử dụng phía sau. | Xác định các phần có cấu trúc cho tóm tắt, số liệu tài chính, rủi ro, cơ hội, trích dẫn và siêu dữ liệu phân tích. |
+| 28/07 | Đã hoàn thành | Tôi đã học cách kiểm tra schema và trích dẫn cục bộ để loại bỏ sớm đầu ra không đáng tin cậy. | Bổ sung kiểm tra schema, kiểu dữ liệu, trường bắt buộc và trích dẫn theo trang trước khi chấp nhận kết quả phân tích. |
+| 29/07 | Đã hoàn thành | Tôi đã nghiên cứu lớp trừu tượng nhà cung cấp và rủi ro của cơ chế chuyển đổi ngầm. | Giữ Amazon Bedrock làm mặc định trong mã nguồn và mẫu triển khai, giữ Groq dưới dạng lựa chọn phát triển không hoạt động và yêu cầu chọn provider rõ ràng. |
+| 30–31/07 | Dự kiến | Tôi dự kiến tìm hiểu cách truy cập thông tin xác thực an toàn và tách kết quả khỏi siêu dữ liệu trạng thái. | Rà soát quyền truy cập bí mật của provider, lưu kết quả riêng tư và xử lý metadata an toàn. |
+| 01–02/08 | Dự kiến | Tôi dự kiến tìm hiểu cách nguồn gốc, trích dẫn và tuyên bố giới hạn hỗ trợ việc trình bày phân tích có trách nhiệm. | Rà soát API kết quả và giao diện về nguồn gốc, tham chiếu trang và tuyên bố không đưa ra khuyến nghị đầu tư. |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+## Kết quả Tuần 6 được ghi nhận đến ngày 29/07
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+- Thiết lập một định dạng phân tích chuẩn cho backend, lớp lưu trữ, kiểm thử và frontend.
+- Bổ sung kiểm tra cục bộ để từ chối kết quả sai cấu trúc trước khi có thể hiển thị như phân tích hoàn chỉnh.
+- Giữ tham chiếu trang để các nhận định quan trọng có thể được đối chiếu với văn bản trích xuất.
+- Cô lập xử lý riêng của từng provider sau một ranh giới rõ ràng.
+- Giữ việc chọn provider ở dạng tường minh và không có tự động chuyển đổi.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+Các hoạt động còn lại của Tuần 6 là kế hoạch và không được báo cáo là đã hoàn thành.

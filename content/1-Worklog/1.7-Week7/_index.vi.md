@@ -1,59 +1,39 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 1.7. </b> "
+title: "Nhật ký Tuần 7"
+date: 2026-08-03
+publishDate: 2026-07-29
+weight: 7
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+**Thời gian:** 03–09/08/2026
 
-### Mục tiêu tuần 7:
+**Trạng thái tại ngày 29/07/2026:** Dự kiến
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+## Mục tiêu Tuần 7
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+- Hoàn thiện luồng tự đăng ký và xác nhận email.
+- Làm cho lỗi xử lý tài liệu dễ hiểu, có thể phục hồi và an toàn khi thử lại.
+- Xác thực Gemini qua ranh giới provider hiện có trong môi trường phát triển.
+- Rà soát ranh giới dữ liệu khi dùng dịch vụ phân tích bên ngoài.
+- Kiểm tra luồng tài liệu dài thành công và luồng từ chối đầu vào vượt giới hạn.
 
+## Nội dung học tập và công việc dự kiến
 
-### Kết quả đạt được tuần 7:
+| Thời gian | Nội dung học tập dự kiến | Công việc dự kiến áp dụng vào FinSight AI |
+|---|---|---|
+| 03/08 | Tìm hiểu vòng đời đăng ký và xác nhận email của Cognito. | Rà soát tự đăng ký, xác nhận, gửi lại mã, hướng dẫn đăng nhập và cách xử lý tài khoản chưa xác nhận. |
+| 04/08 | Tìm hiểu phản hồi xác thực an toàn. | Xác minh lỗi đăng ký và xác nhận dự kiến tạo thông báo hữu ích mà không tiết lộ chi tiết tài khoản nhạy cảm. |
+| 05/08 | Tìm hiểu phân loại lỗi, thời gian chờ và giới hạn số lần thử. | Xác minh chỉ tài liệu lỗi đủ điều kiện mới có thể quay lại quy trình xử lý. |
+| 06/08 | Tìm hiểu ranh giới tin cậy phát sinh khi dùng provider phân tích bên ngoài. | Xác thực luồng Gemini đã cấu hình và kiểm tra PDF gốc vẫn nằm trong vùng lưu trữ AWS riêng tư. |
+| 07/08 | Tìm hiểu cơ chế bảo vệ kích thước đầu vào do máy chủ kiểm soát. | Xác nhận đầu vào quá lớn bị từ chối trước khi gọi provider, không cắt ngầm và không tự động chuyển provider. |
+| 08–09/08 | Tìm hiểu kiểm tra biên bằng dữ liệu có tính đại diện. | Kiểm tra tài liệu dài và tài liệu vượt giới hạn, sau đó ghi nhận kết quả an toàn, có thể lặp lại. |
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+## Kết quả dự kiến của Tuần 7
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+- Rà soát luồng đăng ký và xác nhận với cách xử lý an toàn cho tài khoản chưa xác nhận.
+- Xác minh hành vi retry đủ điều kiện với thời gian chờ và giới hạn số lần thử.
+- Rà soát hành vi của Gemini trong môi trường phát triển qua ranh giới provider tường minh.
+- Mô tả rõ cách xử lý dữ liệu bên ngoài: chỉ văn bản theo trang đã trích xuất và được tin cậy có thể rời AWS, còn PDF gốc vẫn riêng tư.
+- Xác thực luồng đầu vào dài và quá lớn mà không trình bày kết quả một phần như kết quả hoàn chỉnh.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+Không có hoạt động nào của Tuần 7 được báo cáo là đã hoàn thành tại ngày 29/07/2026.

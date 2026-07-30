@@ -1,31 +1,25 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-07-30
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Vector Databases on AWS - The Heart of Generative AI (RAG) Applications
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+While diving deep into Generative AI architectures on AWS, I realized that no matter how intelligent Large Language Models (LLMs) are, their knowledge is frozen at the time of their training (static data). Reading through the AWS Big Data Blog, I want to summarize how AWS solves this using the **RAG (Retrieval-Augmented Generation)** pattern combined with a **Vector Database**.
 
-Key points to know:
+### Why do LLMs need Vector Databases?
+For an LLM to answer questions regarding internal, proprietary company data (like recent financial reports or internal HR policies), a Vector Database is essential.
+The system converts text into numerical vectors (embeddings) and stores them. When a user asks a question, the system performs a **semantic search** to retrieve the most relevant documents. This retrieved context is then fed into the LLM, allowing it to generate accurate answers and preventing hallucinations.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+### Vector DB Options on AWS
+The blog highlights several robust options provided by AWS for vector storage:
+* **Amazon OpenSearch Service:** Ideal for enterprises that need to scale to billions of vectors coupled with a powerful search engine.
+* **Amazon RDS for PostgreSQL (with pgvector):** A fantastic extension. If you're already familiar with PostgreSQL, you can turn it into a fully functional Vector Database with just a few SQL commands.
+* **Amazon Bedrock Knowledge Bases:** A fully managed service that abstracts the entire RAG workflow (embedding, storage, retrieval) into a unified pipeline, enabling developers to build GenAI apps in just a few clicks.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+Combining LLMs with Vector Search is undoubtedly the gold standard for building enterprise AI applications today.
 
-...Image...
-
-...Link...
-
-...Guide...
+*Reference: [AWS Big Data / Generative AI Blogs](https://aws.amazon.com/blogs/big-data/)*

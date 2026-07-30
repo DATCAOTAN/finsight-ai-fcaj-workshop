@@ -1,31 +1,24 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-30
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# Amazon S3 Express One Zone - Hyper-fast Storage for Database and Analytics
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+We typically think of Amazon S3 as cheap, highly durable object storage, but with "moderate" retrieval speeds. However, after reading an AWS Storage Blog post about how Turso (a distributed database) utilizes S3, my perspective completely changed, thanks to **Amazon S3 Express One Zone**.
 
-Key points to know:
+### The Core Difference
+**S3 Express One Zone** is a new storage class purpose-built for data-intensive workloads that demand consistent **single-digit millisecond latency**.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+The blog details how Turso used this class as the durability layer for their transactional database. Instead of relying on expensive EBS volumes or EFS, they write data directly to S3 Express One Zone while still achieving astonishing database performance.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+### Why is it so fast?
+* **Single-Zone Architecture:** Unlike S3 Standard, which replicates data across at least three Availability Zones (AZs), Express One Zone stores data in a single AZ of your choosing. This eliminates inter-datacenter replication latency.
+* **API Optimization:** It utilizes a distinct session-based authentication mechanism that dramatically speeds up API call response times.
 
-...Image...
+While storing data in a single AZ entails a slightly higher risk in the event of an AZ-level disaster, S3 Express One Zone is the perfect drop-in replacement for caching layers, AI/ML data processing, or financial modeling where raw speed is the ultimate priority.
 
-...Link...
-
-...Guide...
+*Reference: [How Turso built a transactional database using Amazon S3 Express One Zone](https://aws.amazon.com/blogs/storage/)*

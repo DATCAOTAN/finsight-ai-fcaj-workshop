@@ -1,40 +1,36 @@
 ---
 title: "Tự đánh giá"
-date: 2024-01-01
+date: 2026-07-30
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong suốt quá trình tham gia chương trình **First Cloud AI Journey (FCAJ)**, tôi đã có cơ hội quý giá để học hỏi, rèn luyện và áp dụng các kiến thức chuyên môn về Cloud và Trí tuệ Nhân tạo vào các bài toán thực tế.
 
-Trong suốt thời gian thực tập tại **[Tên công ty/tổ chức]** từ **[ngày bắt đầu]** đến **[ngày kết thúc]**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
-Tôi đã tham gia **[mô tả ngắn gọn dự án hoặc công việc chính]**, qua đó cải thiện kỹ năng **[liệt kê kỹ năng: lập trình, phân tích, viết báo cáo, giao tiếp…]**.  
+Tôi đã tham gia các buổi workshop chuyên sâu, các cuộc thi Hackathon và trực tiếp nghiên cứu về việc xây dựng các ứng dụng dựa trên nền tảng AWS và các dịch vụ AI. Qua đó, tôi đã cải thiện đáng kể các kỹ năng như: tư duy thiết kế hệ thống (Cloud Architecture), lập trình ứng dụng AI (Agentic AI), và kỹ năng làm việc nhóm.
 
-Về tác phong, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp để nâng cao hiệu quả công việc.
+Về tác phong, tôi luôn cố gắng hoàn thành tốt các nhiệm vụ được giao, chủ động tìm tòi học hỏi và tích cực trao đổi với các diễn giả, mentor cũng như đồng đội để nâng cao chất lượng công việc.
 
-Để phản ánh một cách khách quan quá trình thực tập, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
-
+Dưới đây là bảng tự đánh giá khách quan về quá trình tham gia chương trình của bản thân:
 
 | STT | Tiêu chí                            | Mô tả                                                                                            | Tốt | Khá | Trung bình |
 | --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn** | Hiểu biết về ngành, áp dụng kiến thức vào thực tế, kỹ năng sử dụng công cụ, chất lượng công việc | ✅   | ☐   | ☐          |
-| 2   | **Khả năng học hỏi**                | Tiếp thu kiến thức mới, học hỏi nhanh                                                            | ☐   | ✅   | ☐          |
-| 3   | **Chủ động**                        | Tự tìm hiểu, nhận nhiệm vụ mà không chờ chỉ dẫn                                                  | ✅   | ☐   | ☐          |
-| 4   | **Tinh thần trách nhiệm**           | Hoàn thành công việc đúng hạn, đảm bảo chất lượng                                                | ✅   | ☐   | ☐          |
-| 5   | **Kỷ luật**                         | Tuân thủ giờ giấc, nội quy, quy trình làm việc                                                   | ☐   | ☐   | ✅          |
-| 6   | **Tính cầu tiến**                   | Sẵn sàng nhận feedback và cải thiện bản thân                                                     | ☐   | ✅   | ☐          |
-| 7   | **Giao tiếp**                       | Trình bày ý tưởng, báo cáo công việc rõ ràng                                                     | ☐   | ✅   | ☐          |
-| 8   | **Hợp tác nhóm**                    | Làm việc hiệu quả với đồng nghiệp, tham gia nhóm                                                 | ✅   | ☐   | ☐          |
-| 9   | **Ứng xử chuyên nghiệp**            | Tôn trọng đồng nghiệp, đối tác, môi trường làm việc                                              | ✅   | ☐   | ☐          |
-| 10  | **Tư duy giải quyết vấn đề**        | Nhận diện vấn đề, đề xuất giải pháp, sáng tạo                                                    | ☐   | ✅   | ☐          |
-| 11  | **Đóng góp vào dự án/tổ chức**      | Hiệu quả công việc, sáng kiến cải tiến, ghi nhận từ team                                         | ✅   | ☐   | ☐          |
-| 12  | **Tổng thể**                        | Đánh giá chung về toàn bộ quá trình thực tập                                                     | ✅   | ☐   | ☐          |
+| 1   | **Kiến thức và kỹ năng chuyên môn** | Nắm bắt nhanh các khái niệm mới về Cloud, AI và áp dụng hiệu quả vào dự án thực tế.              | ✅   | ☐   | ☐          |
+| 2   | **Khả năng học hỏi**                | Luôn chủ động tiếp thu kiến thức mới từ các chuyên gia và tài liệu hướng dẫn.                    | ✅   | ☐   | ☐          |
+| 3   | **Chủ động**                        | Tự tìm hiểu các công cụ mới (như Amazon Q, Serverless) để tối ưu hóa công việc.                  | ✅   | ☐   | ☐          |
+| 4   | **Tinh thần trách nhiệm**           | Hoàn thành đầy đủ các phần việc được phân công trong các hoạt động nhóm và bài tập.              | ✅   | ☐   | ☐          |
+| 5   | **Kỷ luật**                         | Tham gia đầy đủ, đúng giờ các sự kiện và buổi chia sẻ của chương trình.                          | ✅   | ☐   | ☐          |
+| 6   | **Tính cầu tiến**                   | Sẵn sàng lắng nghe nhận xét từ mentor để sửa đổi và cải thiện bản thân.                          | ✅   | ☐   | ☐          |
+| 7   | **Giao tiếp**                       | Trình bày ý tưởng rõ ràng, tương tác tốt với các thành viên khác trong nhóm.                     | ☐   | ✅   | ☐          |
+| 8   | **Hợp tác nhóm**                    | Phối hợp nhịp nhàng và hỗ trợ đồng đội trong các dự án Hackathon.                                | ✅   | ☐   | ☐          |
+| 9   | **Ứng xử chuyên nghiệp**            | Tôn trọng diễn giả, các mentor và bạn bè trong môi trường học tập và làm việc.                   | ✅   | ☐   | ☐          |
+| 10  | **Tư duy giải quyết vấn đề**        | Phân tích bài toán linh hoạt và đưa ra các giải pháp thực tế hiệu quả.                           | ☐   | ✅   | ☐          |
+| 11  | **Đóng góp vào dự án/tổ chức**      | Tích cực đóng góp ý tưởng và sức lực giúp nhóm đạt kết quả tốt trong các cuộc thi.               | ✅   | ☐   | ☐          |
+| 12  | **Tổng thể**                        | Chuyến hành trình mang lại nhiều giá trị to lớn về cả kiến thức lẫn kỹ năng thực chiến.          | ✅   | ☐   | ☐          |
 
 ### Cần cải thiện
 
-* Nâng cao tính kỹ luật, chấp hành nghiêm chỉnh nội quy của công ty hoặc bất kỳ trong một tổ chức nào
-* Cải thiện trong cách tư duy giải quyết vấn đề
-* Học cách giao tiếp tốt hơn trong giao tiếp hằng ngày và trong công việc, xử lý tình huống
+* **Giao tiếp trước đám đông:** Cần rèn luyện thêm sự tự tin khi thuyết trình các dự án kỹ thuật trước hội đồng hoặc số đông người tham dự.
+* **Tư duy giải quyết vấn đề:** Nên rèn luyện thói quen nhìn nhận vấn đề từ nhiều góc độ kiến trúc (Architecture) lớn hơn trước khi đi sâu vào code.
+* **Quản lý thời gian:** Tối ưu hóa việc phân bổ thời gian hiệu quả hơn, đặc biệt trong những giai đoạn cường độ cao như thi Hackathon.

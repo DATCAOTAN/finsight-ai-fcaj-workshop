@@ -1,31 +1,25 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-07-30
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# Khởi động AWS Lambda siêu tốc với tính năng SnapStart
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Hôm nay mình vừa đọc được một series bài viết rất hay trên AWS Compute Blog về **AWS Lambda SnapStart** và muốn tóm tắt lại vài ý chính cho mọi người. Nếu hệ thống Serverless của bạn đang bị ảnh hưởng bởi độ trễ khởi động (cold-start latency) thì đây chính là "cứu cánh".
 
-Các điểm chính cần nắm:
+### SnapStart là gì và hoạt động thế nào?
+Thay vì phải khởi tạo môi trường (init) từ đầu mỗi khi một Lambda function mới được gọi (cold-start), SnapStart sẽ chạy quá trình khởi tạo một lần khi bạn publish version mới của function. Sau đó, nó chụp một bức ảnh toàn cảnh (snapshot) bộ nhớ và trạng thái của microVM (sử dụng công nghệ Firecracker). 
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+Khi có request mới đến, Lambda chỉ việc "resume" lại từ snapshot này. Nhờ vậy, thời gian khởi động có thể **nhanh hơn gấp 10 lần**!
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+### Một số lưu ý mình rút ra từ bài báo:
+* **Hỗ trợ đa ngôn ngữ:** Ban đầu SnapStart chỉ hỗ trợ Java (vốn nổi tiếng khởi động chậm), nhưng gần đây AWS đã mở rộng hỗ trợ cho cả **Python và .NET**.
+* **Statefulness:** Vì SnapStart resume lại từ một trạng thái đã được lưu, các đoạn code sinh số ngẫu nhiên (randomness) hay khởi tạo connection đặc thù cần phải được xử lý khéo léo để đảm bảo tính duy nhất.
+* **Không mất thêm phí:** Điều tuyệt vời là tính năng này hoàn toàn miễn phí. Bạn chỉ trả tiền cho dung lượng lưu trữ snapshot và thời gian thực thi như bình thường.
 
-...Hình ảnh...
+Nếu dự án của mọi người yêu cầu độ trễ cực thấp (latency-sensitive) thì việc cấu hình SnapStart qua AWS SAM hay Terraform là một thủ thuật cực kỳ đáng thử nghiệm!
 
-...Link...
-
-...Hướng dẫn...
+*Bài viết tham khảo: [Starting up faster with AWS Lambda SnapStart](https://aws.amazon.com/blogs/compute/starting-up-faster-with-aws-lambda-snapstart/)*

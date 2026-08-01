@@ -1,37 +1,33 @@
 ---
-title: "Week 2 Worklog"
+title: "Week 2 Worklog - Tan Dat"
 date: 2026-06-29
 weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-**Period:** 29 Jun 2026 – 05 Jul 2026
+**Period:** 29 June–5 July 2026
 
 ## Week 2 Objectives
 
-- Learn private and versioned Amazon S3 storage.
-- Build a secure browser-to-S3 PDF upload flow.
-- Design DynamoDB document metadata and lifecycle states.
-- Implement owner-scoped document APIs.
-- Apply idempotency and safe deletion.
+- Implement secure PDF upload with presigned POST.
+- Design document metadata and lifecycle in DynamoDB.
+- Build owner-scoped list, get, and delete APIs.
+- Make retries and version-aware deletion safe.
 
 ## Learning and implementation activities
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| Early week | Studied S3 Block Public Access, encryption, versioning, object ownership, and lifecycle considerations. | FinSight AI stored PDFs in a private, encrypted, versioned bucket with no public object access. |
-| Early week | Learned how constrained presigned POST policies limit file size, MIME type, object key, and encryption headers. | The upload flow allowed direct PDF transfer to S3 while keeping the backend in control of every trusted upload field. |
-| Midweek | Studied file validation using the %PDF- signature, declared size, metadata, and SHA-256 integrity. | Lambda confirmation verified the uploaded object before moving the document into a trusted state. |
-| Midweek | Learned DynamoDB partition and sort keys, conditional updates, and explicit lifecycle states. | Document metadata was stored separately from PDF contents and partitioned by authenticated owner. |
-| Late week | Studied API Gateway and Lambda request validation, idempotency, pagination, and version-aware deletion. | The project implemented owner-scoped list, detail, and delete APIs with safe repeated requests and structured error responses. |
+| Early week | Learned S3 Block Public Access, SSE-KMS, and versioning. | Created a private, encrypted, versioned bucket with no public objects. |
+| Early week | Studied presigned POST policy conditions. | Constrained MIME type, size, object key, and encryption headers. |
+| Midweek | Learned DynamoDB keys and conditional writes. | Stored metadata by owner/document ID and guarded lifecycle transitions. |
+| Midweek | Studied Query, pagination, and opaque tokens. | Built list without Scan and without exposing `LastEvaluatedKey`. |
+| Late week | Learned S3 versions, delete markers, and idempotency. | Removed all versions/markers and safely completed the `DELETED` tombstone on retry. |
 
 ## Week 2 Achievements
 
-- Implemented secure PDF upload without making the S3 bucket or objects public.
-- Stored document metadata separately from PDF contents in DynamoDB.
-- Completed owner-scoped list, detail, pagination, and delete operations.
-- Prevented cross-user document access by deriving ownership from authenticated request context.
-- Added idempotent creation, confirmation, and deletion behavior for safe retries.
-- Verified upload and document-management behavior with local and AWS integration tests.
-- Learned that upload security requires coordinated controls across API Gateway, Lambda, IAM, DynamoDB, and S3.
+- Valid PDFs reached `UPLOADED`; fake, oversized, and key-tampered files were rejected.
+- Verified S3 privacy, encryption, versioning, and Block Public Access.
+- Completed owner-scoped list/get/delete and safe pagination.
+- Made deletion recoverable across S3 cleanup and DynamoDB tombstoning.

@@ -1,12 +1,10 @@
 ---
-title: "Worklog - Tan Dat"
+title: "Worklog"
 date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-
-This Worklog records **Tan Dat's** learning and implementation during eight weeks of the AWS First Cloud Journey program and FinSight AI development.
 
 **Internship period:** 22 June–15 August 2026
 
@@ -20,4 +18,3 @@ This Worklog records **Tan Dat's** learning and implementation during eight week
 | [Week 6](1.6-week6/) | 27 Jul–02 Aug 2026 | Analysis Lambda, schema, and provenance |
 | [Weeks 7–8](1.7-week7/) | 03–15 Aug 2026 | Provider integration, hardening, and final verification |
 
-Each milestone follows the original Worklog structure: objectives, learned knowledge, FinSight AI implementation, and verified results. Weeks 7 and 8 are combined because both belong to the final hardening and handover stage.

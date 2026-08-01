@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 4 - Tấn Đạt"
+title: "Tuần 4"
 date: 2026-07-13
 weight: 4
 pre: " <b> 1.4. </b> "
@@ -29,4 +29,4 @@ pre: " <b> 1.4. </b> "
 - Workflow có retry giới hạn và đường failure rõ ràng.
 - Không có IAM wildcard toàn cục; mỗi Lambda chỉ có quyền cần thiết.
 - CloudWatch cung cấp log, metric và alarm cho các điểm lỗi chính.
-- Alarm do test lỗi có chủ đích tự trở lại `OK` sau evaluation window.
+- Alarm do test lỗi có chủ đích tự trở lại OK sau evaluation window.

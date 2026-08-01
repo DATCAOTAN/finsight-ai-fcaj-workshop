@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 7–8 - Tấn Đạt"
+title: "Tuần 7–8"
 date: 2026-08-03
 publishDate: 2026-07-29
 weight: 7
@@ -23,7 +23,7 @@ pre: " <b> 1.7. </b> "
 | 05–06/08 | Học phân biệt local input limit, provider payload và rate limit. | Ánh xạ category ổn định; không suy ra PDF quá dài chỉ từ HTTP status. |
 | 07–09/08 | Nghiên cứu bounded retry và idempotent recovery. | Chỉ retry lỗi transient; không retry payload quá lớn và không cắt input ngầm. |
 | 10–12/08 | Học CloudFormation stack lifecycle và AWS security verification. | Kiểm tra stack, IAM, S3 private, unsigned request và cross-owner matrix. |
-| 13–15/08 | Nghiên cứu queue/alarm health, cost evidence và cleanup. | Xác nhận queue/DLQ sạch, alarm `OK`, ghi chi phí trung thực và hoãn cleanup phá hủy đến sau demo. |
+| 13–15/08 | Nghiên cứu queue/alarm health, cost evidence và cleanup. | Xác nhận queue/DLQ sạch, alarm OK, ghi chi phí trung thực và hoãn cleanup phá hủy đến sau demo. |
 
 ## Kết quả dự kiến trong Tuần 7–8
 

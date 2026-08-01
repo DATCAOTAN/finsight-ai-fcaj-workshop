@@ -1,5 +1,5 @@
 ---
-title: "Week 4 Worklog - Tan Dat"
+title: "Week 4"
 date: 2026-07-13
 weight: 4
 pre: " <b> 1.4. </b> "
@@ -29,4 +29,4 @@ pre: " <b> 1.4. </b> "
 - Added bounded retry and clear workflow failure paths.
 - Removed global IAM wildcards and limited each Lambda role.
 - Added CloudWatch logs, metrics, and alarms for key failures.
-- Verified intentional-test alarms automatically return to `OK`.
+- Verified intentional-test alarms automatically return to OK.

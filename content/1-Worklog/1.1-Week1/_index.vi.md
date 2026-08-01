@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 1 - Tấn Đạt"
+title: "Tuần 1"
 date: 2026-06-22
 weight: 1
 chapter: false
@@ -19,7 +19,7 @@ pre: " <b> 1.1. </b> "
 
 | Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
 |---|---|---|
-| Đầu tuần | Tìm hiểu Region, Availability Zone và AWS Global Infrastructure. | Chọn `ap-southeast-1` và xác định phạm vi tài nguyên triển khai. |
+| Đầu tuần | Tìm hiểu Region, Availability Zone và AWS Global Infrastructure. | Chọn ap-southeast-1 và xác định phạm vi tài nguyên triển khai. |
 | Đầu tuần | Học Shared Responsibility Model và IAM least privilege. | Đặt yêu cầu lưu trữ private, mã hóa và quyền theo từng thành phần. |
 | Giữa tuần | Nghiên cứu kiến trúc API Gateway, Lambda, S3 và DynamoDB. | Thiết kế luồng upload, metadata, xử lý bất đồng bộ và lấy kết quả. |
 | Giữa tuần | Học AWS SAM và CloudFormation. | Khởi tạo template hạ tầng và tham số môi trường development. |

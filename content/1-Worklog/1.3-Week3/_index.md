@@ -1,5 +1,5 @@
 ---
-title: "Week 3 Worklog - Tan Dat"
+title: "Week 3"
 date: 2026-07-06
 weight: 3
 pre: " <b> 1.3. </b> "
@@ -18,7 +18,7 @@ pre: " <b> 1.3. </b> "
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 06 Jul | Studied DynamoDB Streams and event source mappings. | Detected `PENDING_UPLOAD → UPLOADED` transitions for processing. |
+| 06 Jul | Studied DynamoDB Streams and event source mappings. | Detected PENDING_UPLOAD → UPLOADED transitions for processing. |
 | 07 Jul | Learned SQS at-least-once delivery and visibility timeout. | Configured the processing queue around consumer runtime. |
 | 08 Jul | Studied retry and redrive policy. | Sent repeatedly failing messages to a DLQ. |
 | 09–10 Jul | Learned idempotent consumers and conditional state. | Prevented duplicate messages from starting duplicate workflows. |
@@ -26,7 +26,7 @@ pre: " <b> 1.3. </b> "
 
 ## Week 3 Achievements
 
-- Completed `DynamoDB Streams → dispatcher → SQS → consumer → Step Functions`.
+- Completed DynamoDB Streams → dispatcher → SQS → consumer → Step Functions.
 - Encrypted the queue/DLQ and configured visibility and redrive correctly.
 - Prevented duplicate events from creating invalid workflows or artifacts.
 - Scoped dispatcher and consumer IAM permissions to required resources.

@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 6 - Tấn Đạt"
+title: "Tuần 6"
 date: 2026-07-27
 weight: 6
 pre: " <b> 1.6. </b> "
@@ -27,6 +27,6 @@ pre: " <b> 1.6. </b> "
 ## Kết quả đạt được trong Tuần 6
 
 - Analysis Lambda giữ nguyên schema và citation contract.
-- Response không hợp lệ không được đánh dấu `COMPLETED`.
+- Response không hợp lệ không được đánh dấu COMPLETED.
 - Result API dùng compound key theo owner và không lộ S3 key hoặc lỗi nội bộ.
 - Secret không xuất hiện trong source, template, frontend hoặc log.

@@ -29,6 +29,22 @@ pre: " <b> 1.5. </b> "
 - Configured API Gateway for `AWS_IAM`; the backend derives owner identity from verified context.
 - Deployed the private frontend bucket, CloudFront distribution, and OAC.
 
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| Cognito authentication flow | Learned sign-in, token lifecycle, sign-out, and unconfirmed-account handling. |
+| Browser SigV4 | Learned to sign requests with temporary credentials and refresh a valid session. |
+| CloudFront deployment | Learned cache invalidation, SPA fallback, and production runtime configuration. |
+
+### Work completed
+
+- Built the React/Vite SPA for sign-in, upload, list, detail, status, and result views.
+- Integrated Cognito and SigV4 without storing long-lived access keys in the browser.
+- Added unit and browser acceptance tests for sign-in, upload, and ownership-safe responses.
+
 ## Results and evidence
 
 - Signed-in users obtain temporary credentials and call the API with SigV4.

@@ -29,6 +29,22 @@ pre: " <b> 1.4. </b> "
 - Tách IAM role cho API, dispatcher, consumer và processing Lambda.
 - Thêm log có cấu trúc, metric và alarm cho Lambda error, workflow failure, queue backlog và DLQ.
 
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| CloudWatch Logs Insights | Hiểu truy vấn log theo request/document an toàn mà không ghi nội dung PDF hoặc credential. |
+| CloudWatch Alarms | Hiểu trạng thái `OK`, `ALARM`, `INSUFFICIENT_DATA` và cơ chế tự hồi phục. |
+| AWS CLI validation | Hiểu cách dùng CLI để kiểm tra stack, queue, alarm và resource policy làm bằng chứng. |
+
+### Công việc thực hiện
+
+- Xây dựng test regression AWS cho upload, document management, queue và extraction.
+- Kiểm tra log không chứa credential, presigned URL còn hiệu lực hoặc văn bản tài liệu.
+- Soạn checklist vận hành gồm stack status, queue/DLQ, alarm, test và cleanup có kiểm soát.
+
 ## Kết quả và bằng chứng
 
 - Workflow khôi phục được lỗi tạm thời và ghi trạng thái thất bại có kiểm soát.

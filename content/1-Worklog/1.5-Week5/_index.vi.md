@@ -29,6 +29,22 @@ pre: " <b> 1.5. </b> "
 - Cấu hình API Gateway dùng `AWS_IAM`; backend suy ra owner từ identity đã xác minh.
 - Triển khai frontend bucket riêng tư, CloudFront distribution và OAC.
 
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| Cognito authentication flow | Hiểu sign-in, token lifecycle, sign-out và xử lý tài khoản chưa xác nhận. |
+| SigV4 trong trình duyệt | Hiểu ký request bằng temporary credentials và tự làm mới phiên hợp lệ. |
+| CloudFront deployment | Hiểu cache invalidation, SPA fallback và cấu hình runtime cho bản production. |
+
+### Công việc thực hiện
+
+- Xây dựng React/Vite SPA cho đăng nhập, upload, danh sách, chi tiết, trạng thái và kết quả.
+- Tích hợp Cognito và ký SigV4 mà không lưu access key dài hạn trong trình duyệt.
+- Viết unit test và chạy browser acceptance cho đăng nhập, upload và ownership-safe responses.
+
 ## Kết quả và bằng chứng
 
 - Người dùng đăng nhập nhận temporary credentials và gọi API bằng SigV4.

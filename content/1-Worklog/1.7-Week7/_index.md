@@ -24,11 +24,27 @@ pre: " <b> 1.7. </b> "
 | Serverless reliability | Learned bounded retry, idempotency, DLQ recovery, and safe provider-error classification. |
 | AWS operations | Learned CloudFormation lifecycle, CloudWatch alarm recovery, cost evidence, and destructive cleanup. |
 
-### Work completed
+### Planned work
 
 - Activated Gemini for development through Secrets Manager while retaining Bedrock as source/template default and disabling automatic fallback.
 - Enforced a trusted input limit without silent truncation and classified input, payload, rate-limit, unavailable, and unknown failures.
 - Verified stack, IAM, private S3, two principals, queue/DLQ, alarms, logs, and secrets; cleaned only temporary test resources when appropriate.
+
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| Cognito self-registration | Learned sign-up, confirmation codes, resend-code flow, and safe authentication errors. |
+| CloudFront release verification | Learned invalidation, production-asset checks, and verification of the currently served build. |
+| AWS evidence and cost | Learned to collect CloudFormation, CloudWatch, S3, and Cognito evidence and report only available cost data. |
+
+### Planned work
+
+- Completed self-registration, email confirmation, resend-code flow, and real-email browser acceptance.
+- Built Vietnamese analysis-failure UX with retry cooldown, duplicate-submit prevention, and logical document-splitting guidance.
+- Finalised the bilingual Hugo workshop, architecture diagram, evidence images, demo guide, and handover checklist.
 
 ## Planned results and evidence
 

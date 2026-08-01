@@ -30,6 +30,22 @@ pre: " <b> 1.1. </b> "
 - Thiết kế ranh giới IAM, lưu trữ riêng tư và mã hóa làm yêu cầu từ đầu.
 - Khởi tạo cấu trúc SAM/CloudFormation và quy trình kiểm tra template.
 
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| AWS Well-Architected Framework | Hiểu sáu trụ cột và cách dùng bảo mật, độ tin cậy, chi phí để đánh giá MVP. |
+| Serverless trên AWS | Hiểu vai trò của API Gateway, Lambda, S3 và DynamoDB trong kiến trúc không máy chủ. |
+| AWS Pricing và Budgets | Hiểu mô hình pay-as-you-go, Free Tier và yêu cầu theo dõi chi phí từ đầu. |
+
+### Công việc thực hiện
+
+- Phân tích người dùng, hành trình upload–theo dõi–xem kết quả và tiêu chí demo.
+- Xây dựng kế hoạch kiểm thử, danh mục bằng chứng và cấu trúc tài liệu workshop.
+- Rà soát kiến trúc theo góc nhìn trải nghiệm người dùng, chi phí và khả năng vận hành.
+
 ## Kết quả và bằng chứng
 
 - Hoàn thành sơ đồ kiến trúc và phạm vi MVP.

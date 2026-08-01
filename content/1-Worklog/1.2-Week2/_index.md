@@ -30,6 +30,22 @@ pre: " <b> 1.2. </b> "
 - Verified PDF signature, size, metadata, and SHA-256 before accepting the document state.
 - Built list, get, and delete APIs using the owner/document compound key, including S3 versions and delete markers.
 
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| S3 presigned requests | Learned how browsers upload directly without AWS secrets while backend policy controls the request. |
+| DynamoDB access patterns | Learned to design the table from list/get/delete queries and owner scope. |
+| AWS SDK | Learned how the frontend receives an upload contract, posts to S3, and calls document APIs. |
+
+### Work completed
+
+- Designed upload, list, detail, pagination, and delete-confirmation interactions.
+- Added client file checks and clear uploading, success, and safe-error states.
+- Created test cases for valid, invalid, oversized, key-tampered, and repeatedly deleted files.
+
 ## Results and evidence
 
 - A real PDF moved from `PENDING_UPLOAD` to `UPLOADED`; fake, oversized, and key-tampered files were rejected.

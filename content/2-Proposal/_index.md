@@ -85,14 +85,13 @@ OCR, RAG, vector databases, investment recommendations, automatic trading, produ
 
 ### 5. Timeline and Milestones
 
-- **Week 1 — 22/06–28/06:** project definition, AWS foundation, and architecture.
-- **Week 2 — 29/06–05/07:** secure upload and document management.
-- **Week 3 — 06/07–12/07:** asynchronous processing and PDF extraction.
-- **Week 4 — 13/07–19/07:** workflow, security, monitoring, cost, and cleanup.
-- **Week 5 — 20/07–26/07:** Cognito, frontend, provider abstraction, and structured analysis.
-- **Week 6 — 27/07–02/08:** Gemini integration, failure recovery, and final application validation.
-- **Week 7 — 03/08–09/08:** bilingual report, architecture diagram, screenshots, and review.
-- **Week 8 — 10/08–15/08:** workshop validation, demo, privacy review, publication, and submission.
+- **Week 1 — 22/06–28/06:** define requirements, user journeys, serverless architecture, AWS SAM foundation, and the test plan.
+- **Week 2 — 29/06–05/07:** implement secure S3 upload, DynamoDB metadata, document-management APIs, and upload-boundary tests.
+- **Week 3 — 06/07–12/07:** build DynamoDB Streams, SQS/DLQ, Step Functions, and page-preserving embedded-text extraction.
+- **Week 4 — 13/07–19/07:** complete workflow orchestration, least-privilege IAM, CloudWatch, and AWS regression tests.
+- **Week 5 — 20/07–26/07:** integrate Cognito, SigV4 API access, the React/Vite SPA, and CloudFront frontend delivery.
+- **Week 6 — 27/07–02/08:** build the Analysis Lambda, validate schemas and citations, store provenance, and complete the result interface.
+- **Weeks 7–8 — 03/08–15/08:** integrate Gemini, complete user registration and failure UX, perform security hardening and end-to-end verification, and finish the workshop and handover.
 
 ### 6. Budget Estimation
 

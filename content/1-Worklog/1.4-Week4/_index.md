@@ -7,30 +7,46 @@ pre: " <b> 1.4. </b> "
 
 **Period:** 13–19 July 2026
 
-## Week 4 Objectives
+## Objectives
 
-- Study AWS Step Functions as a way to make multi-step processing visible and recoverable.
-- Understand IAM-authenticated API invocation and least-privilege service roles.
-- Learn practical observability with structured logs, metrics, alarms, and health checks.
-- Strengthen security boundaries around queues, storage, and workflow execution.
-- Prepare repeatable operational checks for deployment and cleanup.
+- Orchestrate stateful and recoverable extraction.
+- Narrow IAM permissions for each component.
+- Establish operational logs, metrics, and alarms.
 
-## Learning and implementation activities
+## Tấn Đạt
 
-| Time | Learning topic | FinSight AI implementation activity |
-|---|---|---|
-| 13 July | Studied how workflow orchestration makes multi-step processing visible and recoverable. | Modelled extraction, validation, analysis, and completion as explicit Step Functions states with clear success and failure paths. |
-| 14 July | Studied IAM-authenticated APIs and AWS Signature Version 4. | Configured the API to use AWS_IAM authorization for protected requests. |
-| 15 July | Learned how least-privilege boundaries reduce the impact of a compromised component. | Narrowed Lambda, queue, bucket, table, and workflow permissions to the actions and resources each component needs. |
-| 16–17 July | Studied structured logs, application metrics, and their role in troubleshooting. | Added structured logs and CloudWatch Embedded Metric Format records for document states, failures, latency, and provider activity. |
-| 18–19 July | Learned how alarms, health checks, cost review, and cleanup support operational readiness. | Added CloudWatch alarms and health checks, reviewed queue behaviour and costs, and practised cleanup and secret-scanning checks. |
+### AWS knowledge
 
-## Week 4 Achievements
+| Topic | Knowledge gained |
+|---|---|
+| Step Functions | Learned Retry, Catch, failure states, and multi-step workflow recovery. |
+| IAM | Learned execution roles, resource-level permissions, and per-Lambda role separation. |
+| Amazon CloudWatch | Learned Logs, Embedded Metric Format, metric filters, alarms, and evaluation windows. |
 
-- Replaced an implicit chain of background work with a Step Functions workflow whose progress and failures can be inspected.
-- Protected application API calls with IAM authentication and Signature Version 4.
-- Reduced broad service permissions by assigning narrowly scoped roles to processing components.
-- Added structured operational logs without placing document contents or credentials in log messages.
-- Published metrics for document outcomes, processing duration, queue failures, and analysis-provider requests.
-- Added CloudWatch alarms covering processing errors, dead-letter queues, workflow failures, and abnormal operating conditions.
-- Established repeatable health, cost-awareness, secret-scan, and cleanup checks for later validation.
+### Work completed
+
+- Modelled validation, extraction, and failure handling in the state machine.
+- Separated IAM roles for API, dispatcher, consumer, and processing Lambdas.
+- Added structured logs, metrics, and alarms for Lambda errors, workflow failures, queue backlog, and DLQ messages.
+
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| CloudWatch Logs Insights | Learned safe request/document queries without logging PDF content or credentials. |
+| CloudWatch Alarms | Learned `OK`, `ALARM`, `INSUFFICIENT_DATA`, and automatic recovery behaviour. |
+| AWS CLI validation | Learned to inspect stacks, queues, alarms, and resource policies as evidence. |
+
+### Work completed
+
+- Built AWS regression tests for upload, document management, queues, and extraction.
+- Verified that logs contain no credentials, active presigned URLs, or document text.
+- Wrote an operational checklist for stack state, queue/DLQ, alarms, tests, and controlled cleanup.
+
+## Results and evidence
+
+- The workflow recovers transient errors and records controlled terminal failures.
+- IAM has no global wildcard; each Lambda reaches only the resources it needs.
+- Alarms respond to intentional failure tests and return to `OK` after the evaluation window clears.

@@ -7,30 +7,46 @@ pre: " <b> 1.6. </b> "
 
 **Period:** 27 July–2 August 2026
 
-## Week 6 Objectives
+## Objectives
 
-- Define a stable, structured output for financial-document analysis.
-- Study schema validation, citation checks, and clear limits for AI-generated content.
-- Separate analysis-provider integrations behind one explicit boundary.
-- Protect provider credentials and record useful provenance without exposing secrets.
-- Present analysis results clearly without giving investment recommendations.
+- Produce schema-valid financial analysis with page citations.
+- Protect provider credentials and store provenance.
+- Complete owner-scoped result retrieval.
 
-## Learning and implementation activities
+## Tấn Đạt
 
-| Time | Learning topic | FinSight AI implementation activity |
-|---|---|---|
-| 27 July | Studied how a canonical schema makes AI-assisted analysis predictable for downstream systems. | Defined structured sections for summary, financial figures, risks, opportunities, citations, and analysis metadata. |
-| 28 July | Learned how local schema and citation validation can reject unreliable output early. | Added schema, type, required-field, and page-citation checks before an analysis result can be accepted. |
-| 29–30 July | Studied provider abstraction and the risks of implicit fallback behaviour. | Kept Amazon Bedrock as the source and template default, implemented Groq as an inactive development option, and avoided automatic provider fallback. |
-| 31 July | Studied safe credential access and the separation of results from status metadata. | Read provider credentials from AWS Secrets Manager, stored result artifacts in private S3, and kept status plus artifact metadata in DynamoDB. |
-| 1–2 August | Learned how provenance, citations, and disclaimers support responsible presentation of analysis. | Added the result API and React views with provider/model provenance, page references, and a clear statement that the output is informational rather than investment advice. |
+### AWS knowledge
 
-## Week 6 Achievements
+| Topic | Knowledge gained |
+|---|---|
+| AWS Secrets Manager | Learned secret ARNs, IAM access, rotation boundaries, and secret-safe logging and templates. |
+| Amazon Bedrock | Learned model invocation, account quotas, and its source/template-default role in the system. |
+| S3 and DynamoDB | Learned to separate result artifacts from metadata to avoid item limits and reduce data exposure. |
 
-- Established one canonical analysis format that the backend, storage layer, tests, and frontend can share.
-- Rejected malformed results locally before they could be presented as completed analysis.
-- Preserved page references so users can trace important observations back to extracted document text.
-- Isolated provider-specific request and response handling behind a clear boundary.
-- Kept Bedrock as the source and deployment-template default while leaving Groq implemented but inactive; provider changes remain explicit and there is no automatic fallback.
-- Stored analysis artifacts privately and exposed only authorized results and safe provenance metadata.
-- Presented summaries, figures, risks, and opportunities as document analysis with an explicit no-investment-recommendation disclaimer.
+### Work completed
+
+- Built the Analysis Lambda with server-side provider selection; the browser cannot select a model.
+- Validated JSON schema, required fields, and page citations before accepting a result.
+- Stored result artifacts in private S3 and only safe status, artifact reference, and provenance in DynamoDB.
+
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| Bedrock model access | Learned the distinction between model configuration, IAM permission, and live account quota. |
+| Secrets Manager boundary | Learned that only Lambda reads the secret; the frontend receives no provider key or provider choice. |
+| CloudWatch provenance | Learned to record provider/model/version safely without exposing prompts or document data. |
+
+### Work completed
+
+- Built result views for summary, metrics, risks, opportunities, citations, and provenance.
+- Presented processing/failed/completed states consistently and never treated partial output as complete.
+- Added frontend tests for result schema, page citations, safe messages, and documents without results.
+
+## Results and evidence
+
+- Invalid schema or citations are rejected and never presented as completed analysis.
+- The result API uses the owner-scoped compound key and returns no prompt, secret, S3 key, or internal exception.
+- Bedrock remains the source/template default; live acceptance is quota-blocked and no automatic provider fallback exists.

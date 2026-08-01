@@ -6,31 +6,48 @@ chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-**Period:** 22 Jun 2026 – 28 Jun 2026
+**Period:** 22–28 June 2026
 
-## Week 1 Objectives
+## Objectives
 
-- Understand the FCAJ project requirements and define the FinSight AI problem.
-- Review AWS fundamentals, shared responsibility, IAM, and cost awareness.
-- Learn serverless architecture and Infrastructure as Code.
-- Design the initial secure financial-document processing architecture.
-- Prepare the repository and AWS SAM development environment.
+- Define the FinSight AI problem, scope, and sensitive-data boundaries.
+- Establish core AWS and shared-responsibility knowledge.
+- Design the initial serverless architecture and Infrastructure as Code environment.
 
-## Learning and implementation activities
+## Tấn Đạt
 
-| Time | Learning topic | FinSight AI implementation activity |
-|---|---|---|
-| Early week | Reviewed the FCAJ program outcomes and the challenges of manually examining long financial PDFs. | The project problem statement focused on secure upload, automated extraction, and structured financial analysis. |
-| Early week | Studied how project scope, target users, non-goals, and data sensitivity guide technical decisions. | The project established clear boundaries: private documents, owner-scoped access, no investment recommendations, and no unnecessary infrastructure. |
-| Midweek | Learned about AWS Regions, the shared responsibility model, IAM, least privilege, and cost awareness. | Security and cost requirements were included in the architecture before implementation began. |
-| Midweek | Practiced AWS CLI profiles and learned how AWS SAM and CloudFormation describe serverless resources as code. | The repository and SAM development environment were prepared for repeatable validation and deployment. |
-| Late week | Compared API Gateway, Lambda, S3, and DynamoDB for API, compute, storage, and metadata responsibilities. | The initial FinSight AI architecture connected these services into a secure financial-document processing foundation. |
+### AWS knowledge
 
-## Week 1 Achievements
+| Topic | Knowledge gained |
+|---|---|
+| AWS Global Infrastructure | Understood Regions, Availability Zones, and the choice of `ap-southeast-1`. |
+| IAM and Shared Responsibility | Distinguished AWS and customer security duties and applied least privilege. |
+| AWS SAM and CloudFormation | Learned to declare, validate, and repeatedly deploy serverless resources. |
 
-- Defined the FinSight AI problem statement, target users, scope, and non-goals.
-- Designed the initial serverless architecture for secure financial-document processing.
-- Prepared the AWS CLI, repository, and AWS SAM development environment.
-- Established private storage, owner-scoped access, least privilege, and safe logging as core security principles.
-- Organized the roadmap into secure upload, document management, asynchronous processing, extraction, analysis, frontend, and observability.
-- Learned that security, cost, and resource-lifecycle requirements should be defined before implementation.
+### Work completed
+
+- Analysed the backend path from API Gateway and Lambda to S3 and DynamoDB.
+- Established IAM boundaries, private storage, and encryption as baseline requirements.
+- Created the SAM/CloudFormation structure and template-validation workflow.
+
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| AWS Well-Architected Framework | Learned the six pillars and used security, reliability, and cost to assess the MVP. |
+| Serverless on AWS | Understood the roles of API Gateway, Lambda, S3, and DynamoDB in a serverless architecture. |
+| AWS Pricing and Budgets | Learned pay-as-you-go, Free Tier, and the need to monitor cost from the start. |
+
+### Work completed
+
+- Analysed users, the upload–status–result journey, and demonstration criteria.
+- Prepared the testing plan, evidence checklist, and workshop-document structure.
+- Reviewed the architecture from user-experience, cost, and operational perspectives.
+
+## Results and evidence
+
+- Completed the architecture and MVP scope.
+- Defined owner-scoped access, private documents, and the exclusion of investment advice.
+- Organised the repository into backend, infrastructure, tests, and documentation.

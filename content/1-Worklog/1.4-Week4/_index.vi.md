@@ -7,30 +7,46 @@ pre: " <b> 1.4. </b> "
 
 **Thời gian:** 13–19/07/2026
 
-## Mục tiêu Tuần 4
+## Mục tiêu
 
-- Nghiên cứu AWS Step Functions để quy trình nhiều bước có thể quan sát và phục hồi.
-- Hiểu cách gọi API có xác thực IAM và thiết kế vai trò dịch vụ theo nguyên tắc đặc quyền tối thiểu.
-- Học cách xây dựng khả năng quan sát thực tế bằng log có cấu trúc, chỉ số, cảnh báo và kiểm tra sức khỏe.
-- Củng cố ranh giới bảo mật cho hàng đợi, lưu trữ và thực thi quy trình.
-- Chuẩn bị các bước kiểm tra vận hành có thể lặp lại cho triển khai và dọn dẹp.
+- Điều phối quy trình trích xuất có trạng thái và khả năng phục hồi.
+- Thu hẹp quyền IAM theo từng thành phần.
+- Thiết lập log, metric và alarm vận hành.
 
-## Nội dung học tập và công việc triển khai
+## Tấn Đạt
 
-| Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
-|---|---|---|
-| 13/07 | Nghiên cứu cách điều phối quy trình giúp xử lý nhiều bước có thể quan sát và phục hồi. | Mô hình hóa các bước trích xuất, kiểm tra, phân tích và hoàn tất thành các trạng thái Step Functions với đường đi thành công và thất bại rõ ràng. |
-| 14/07 | Tìm hiểu API xác thực bằng IAM và AWS Signature Version 4. | Cấu hình API dùng cơ chế ủy quyền AWS_IAM cho các yêu cầu được bảo vệ. |
-| 15/07 | Học cách ranh giới đặc quyền tối thiểu giảm tác động khi một thành phần bị xâm phạm. | Thu hẹp quyền của Lambda, hàng đợi, bucket, bảng và quy trình xuống đúng hành động cùng tài nguyên mà từng thành phần cần. |
-| 16–17/07 | Nghiên cứu log có cấu trúc, chỉ số ứng dụng và vai trò của chúng trong khắc phục sự cố. | Bổ sung log có cấu trúc và bản ghi CloudWatch Embedded Metric Format cho trạng thái tài liệu, lỗi, độ trễ và hoạt động của nhà cung cấp phân tích. |
-| 18–19/07 | Học cách cảnh báo, kiểm tra sức khỏe, rà soát chi phí và dọn dẹp hỗ trợ khả năng sẵn sàng vận hành. | Bổ sung cảnh báo CloudWatch và kiểm tra sức khỏe, rà soát hành vi hàng đợi và chi phí, đồng thời thực hành dọn dẹp và quét thông tin bí mật. |
+### Kiến thức AWS
 
-## Kết quả đạt được trong Tuần 4
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| Step Functions | Hiểu Retry, Catch, trạng thái lỗi và cách phục hồi workflow nhiều bước. |
+| IAM | Hiểu execution role, resource-level permission và phân tách quyền theo Lambda. |
+| Amazon CloudWatch | Hiểu Logs, Embedded Metric Format, metric filter, alarm và evaluation window. |
 
-- Thay chuỗi tác vụ nền ngầm định bằng quy trình Step Functions có thể quan sát tiến độ và lỗi.
-- Bảo vệ các lượt gọi API của ứng dụng bằng xác thực IAM và Signature Version 4.
-- Giảm các quyền dịch vụ quá rộng bằng cách gán vai trò có phạm vi hẹp cho từng thành phần xử lý.
-- Bổ sung log vận hành có cấu trúc mà không đưa nội dung tài liệu hay thông tin đăng nhập vào thông điệp log.
-- Xuất bản chỉ số về kết quả tài liệu, thời gian xử lý, lỗi hàng đợi và yêu cầu tới nhà cung cấp phân tích.
-- Bổ sung cảnh báo CloudWatch cho lỗi xử lý, hàng đợi lỗi, thất bại quy trình và các điều kiện vận hành bất thường.
-- Thiết lập các bước kiểm tra sức khỏe, nhận thức chi phí, quét thông tin bí mật và dọn dẹp để dùng trong giai đoạn xác thực sau.
+### Công việc thực hiện
+
+- Mô hình hóa các bước validate, extraction và failure handling trong state machine.
+- Tách IAM role cho API, dispatcher, consumer và processing Lambda.
+- Thêm log có cấu trúc, metric và alarm cho Lambda error, workflow failure, queue backlog và DLQ.
+
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| CloudWatch Logs Insights | Hiểu truy vấn log theo request/document an toàn mà không ghi nội dung PDF hoặc credential. |
+| CloudWatch Alarms | Hiểu trạng thái `OK`, `ALARM`, `INSUFFICIENT_DATA` và cơ chế tự hồi phục. |
+| AWS CLI validation | Hiểu cách dùng CLI để kiểm tra stack, queue, alarm và resource policy làm bằng chứng. |
+
+### Công việc thực hiện
+
+- Xây dựng test regression AWS cho upload, document management, queue và extraction.
+- Kiểm tra log không chứa credential, presigned URL còn hiệu lực hoặc văn bản tài liệu.
+- Soạn checklist vận hành gồm stack status, queue/DLQ, alarm, test và cleanup có kiểm soát.
+
+## Kết quả và bằng chứng
+
+- Workflow khôi phục được lỗi tạm thời và ghi trạng thái thất bại có kiểm soát.
+- IAM không có wildcard toàn cục; mỗi Lambda chỉ truy cập tài nguyên cần thiết.
+- Alarm phản ứng với lỗi kiểm thử có chủ đích và tự trở lại `OK` khi evaluation window hết dữ liệu lỗi.

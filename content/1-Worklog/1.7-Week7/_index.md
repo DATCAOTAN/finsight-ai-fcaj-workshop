@@ -25,7 +25,7 @@ pre: " <b> 1.7. </b> "
 | 10–12 Aug | Learned CloudFormation lifecycle and AWS security verification. | Checked stack, IAM, private S3, unsigned requests, and cross-owner access. |
 | 13–15 Aug | Studied queue/alarm health, cost evidence, and cleanup. | Verified queue/DLQ and alarms, reported only real cost data, and deferred destructive cleanup until after demo. |
 
-## Planned Weeks 7–8 Outcomes
+## Weeks 7–8 Achievements
 
 - Upload, extraction, analysis, and result retrieval operate end to end with server-selected development provider.
 - Oversized input is rejected before provider invocation without truncation or inappropriate retry.

@@ -25,7 +25,7 @@ pre: " <b> 1.7. </b> "
 | 10–12/08 | Học CloudFormation stack lifecycle và AWS security verification. | Kiểm tra stack, IAM, S3 private, unsigned request và cross-owner matrix. |
 | 13–15/08 | Nghiên cứu queue/alarm health, cost evidence và cleanup. | Xác nhận queue/DLQ sạch, alarm OK, ghi chi phí trung thực và hoãn cleanup phá hủy đến sau demo. |
 
-## Kết quả dự kiến trong Tuần 7–8
+## Kết quả đạt được trong Tuần 7–8
 
 - Luồng upload, extraction, analysis và result hoạt động toàn trình với provider development được chọn phía server.
 - Input vượt giới hạn bị từ chối trước provider; không cắt ngầm và không retry sai loại lỗi.

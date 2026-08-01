@@ -1,5 +1,5 @@
 ---
-title: "Đề xuất dự án FinSight AI"
+title: "Bản đề xuất"
 date: 2026-07-29
 weight: 2
 chapter: false

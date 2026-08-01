@@ -85,14 +85,13 @@ OCR, RAG, cơ sở dữ liệu vector, khuyến nghị đầu tư, giao dịch t
 
 ### 5. Tiến độ và cột mốc
 
-- **Tuần 1 — 22/06–28/06:** xác định dự án, nền tảng AWS và kiến trúc.
-- **Tuần 2 — 29/06–05/07:** tải lên an toàn và quản lý tài liệu.
-- **Tuần 3 — 06/07–12/07:** xử lý bất đồng bộ và trích xuất PDF.
-- **Tuần 4 — 13/07–19/07:** workflow, bảo mật, giám sát, chi phí và dọn dẹp.
-- **Tuần 5 — 20/07–26/07:** Cognito, frontend, provider abstraction và phân tích có cấu trúc.
-- **Tuần 6 — 27/07–02/08:** tích hợp Gemini, phục hồi lỗi và kiểm tra ứng dụng cuối.
-- **Tuần 7 — 03/08–09/08:** báo cáo song ngữ, sơ đồ kiến trúc, ảnh chụp và review.
-- **Tuần 8 — 10/08–15/08:** kiểm tra workshop, demo, rà soát quyền riêng tư, xuất bản và nộp bài.
+- **Tuần 1 — 22/06–28/06:** xác định yêu cầu, hành trình người dùng, kiến trúc serverless, AWS SAM và kế hoạch kiểm thử.
+- **Tuần 2 — 29/06–05/07:** triển khai upload S3 an toàn, metadata DynamoDB, API quản lý tài liệu và kiểm thử ranh giới upload.
+- **Tuần 3 — 06/07–12/07:** xây dựng DynamoDB Streams, SQS/DLQ, Step Functions và trích xuất embedded text theo trang.
+- **Tuần 4 — 13/07–19/07:** hoàn thiện workflow, IAM least privilege, CloudWatch và regression test trên AWS.
+- **Tuần 5 — 20/07–26/07:** tích hợp Cognito, API SigV4, React/Vite SPA và phân phối frontend qua CloudFront.
+- **Tuần 6 — 27/07–02/08:** xây dựng Analysis Lambda, kiểm tra schema và trích dẫn, lưu provenance và hoàn thiện giao diện kết quả.
+- **Tuần 7–8 — 03/08–15/08:** tích hợp Gemini, hoàn thiện đăng ký người dùng và UX lỗi, hardening bảo mật, kiểm chứng end-to-end, workshop và bàn giao.
 
 ### 6. Ước tính ngân sách
 

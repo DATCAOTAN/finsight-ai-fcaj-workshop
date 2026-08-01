@@ -1,36 +1,33 @@
 ---
-title: "Week 1 Worklog"
+title: "Week 1 Worklog - Anh Duc"
 date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
 
-**Period:** 22 Jun 2026 – 28 Jun 2026
+**Period:** 22–28 June 2026
 
 ## Week 1 Objectives
 
-- Understand the FCAJ project requirements and define the FinSight AI problem.
-- Review AWS fundamentals, shared responsibility, IAM, and cost awareness.
-- Learn serverless architecture and Infrastructure as Code.
-- Design the initial secure financial-document processing architecture.
-- Prepare the repository and AWS SAM development environment.
+- Understand the AWS First Cloud Journey requirements and FinSight AI problem.
+- Learn AWS Cloud, serverless, and Well-Architected fundamentals.
+- Define the user journey, demonstration criteria, and test plan.
+- Prepare the documentation and evidence structure.
 
 ## Learning and implementation activities
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| Early week | Reviewed the FCAJ program outcomes and the challenges of manually examining long financial PDFs. | The project problem statement focused on secure upload, automated extraction, and structured financial analysis. |
-| Early week | Studied how project scope, target users, non-goals, and data sensitivity guide technical decisions. | The project established clear boundaries: private documents, owner-scoped access, no investment recommendations, and no unnecessary infrastructure. |
-| Midweek | Learned about AWS Regions, the shared responsibility model, IAM, least privilege, and cost awareness. | Security and cost requirements were included in the architecture before implementation began. |
-| Midweek | Practiced AWS CLI profiles and learned how AWS SAM and CloudFormation describe serverless resources as code. | The repository and SAM development environment were prepared for repeatable validation and deployment. |
-| Late week | Compared API Gateway, Lambda, S3, and DynamoDB for API, compute, storage, and metadata responsibilities. | The initial FinSight AI architecture connected these services into a secure financial-document processing foundation. |
+| Early week | Studied AWS Regions, Availability Zones, and shared responsibility. | Recorded the deployment Region, data boundaries, and customer responsibilities for document protection. |
+| Early week | Learned the serverless roles of API Gateway, Lambda, S3, and DynamoDB. | Mapped each service to upload, processing, and result retrieval. |
+| Midweek | Studied the six AWS Well-Architected pillars. | Defined security, reliability, operations, and cost review criteria for the MVP. |
+| Midweek | Learned AWS Pricing, Free Tier, and Cost Explorer. | Prepared resource tracking and required evidence for any cost statement. |
+| Late week | Learned to turn user requirements into acceptance criteria. | Prepared the demonstration flow, test plan, and bilingual workshop structure. |
 
 ## Week 1 Achievements
 
-- Defined the FinSight AI problem statement, target users, scope, and non-goals.
-- Designed the initial serverless architecture for secure financial-document processing.
-- Prepared the AWS CLI, repository, and AWS SAM development environment.
-- Established private storage, owner-scoped access, least privilege, and safe logging as core security principles.
-- Organized the roadmap into secure upload, document management, asynchronous processing, extraction, analysis, frontend, and observability.
-- Learned that security, cost, and resource-lifecycle requirements should be defined before implementation.
+- Defined users, business flow, and the exclusion of investment advice.
+- Understood the main AWS services in the FinSight AI architecture.
+- Completed the phase-based test and evidence plan.
+- Established that documentation must match deployed runtime and verified data.

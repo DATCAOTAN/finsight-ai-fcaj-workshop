@@ -1,5 +1,5 @@
 ---
-title: "Week 6 Worklog"
+title: "Week 6 Worklog - Anh Duc"
 date: 2026-07-27
 weight: 6
 pre: " <b> 1.6. </b> "
@@ -9,28 +9,24 @@ pre: " <b> 1.6. </b> "
 
 ## Week 6 Objectives
 
-- Define a stable, structured output for financial-document analysis.
-- Study schema validation, citation checks, and clear limits for AI-generated content.
-- Separate analysis-provider integrations behind one explicit boundary.
-- Protect provider credentials and record useful provenance without exposing secrets.
-- Present analysis results clearly without giving investment recommendations.
+- Understand Bedrock, external-provider, and Secrets Manager boundaries.
+- Present structured results with page citations.
+- Never display partial output or raw provider errors as complete analysis.
+- Verify provenance and safe user messages.
 
 ## Learning and implementation activities
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 27 July | Studied how a canonical schema makes AI-assisted analysis predictable for downstream systems. | Defined structured sections for summary, financial figures, risks, opportunities, citations, and analysis metadata. |
-| 28 July | Learned how local schema and citation validation can reject unreliable output early. | Added schema, type, required-field, and page-citation checks before an analysis result can be accepted. |
-| 29–30 July | Studied provider abstraction and the risks of implicit fallback behaviour. | Kept Amazon Bedrock as the source and template default, implemented Groq as an inactive development option, and avoided automatic provider fallback. |
-| 31 July | Studied safe credential access and the separation of results from status metadata. | Read provider credentials from AWS Secrets Manager, stored result artifacts in private S3, and kept status plus artifact metadata in DynamoDB. |
-| 1–2 August | Learned how provenance, citations, and disclaimers support responsible presentation of analysis. | Added the result API and React views with provider/model provenance, page references, and a clear statement that the output is informational rather than investment advice. |
+| 27 Jul | Studied Bedrock model access, IAM, and account quota. | Documented Bedrock as source/template default with live acceptance quota-blocked. |
+| 28 Jul | Learned the Secrets Manager trust boundary. | Verified that only Analysis Lambda reads the secret and the frontend receives no provider key. |
+| 29 Jul | Studied JSON schema and page-citation validation. | Rendered validated schema fields instead of free-form provider responses. |
+| 30–31 Jul | Learned safe provenance recording. | Displayed provider, model, and citations without prompts, S3 keys, or exceptions. |
+| 01–02 Aug | Studied asynchronous result states. | Distinguished processing, failed, and completed without presenting partial results. |
 
 ## Week 6 Achievements
 
-- Established one canonical analysis format that the backend, storage layer, tests, and frontend can share.
-- Rejected malformed results locally before they could be presented as completed analysis.
-- Preserved page references so users can trace important observations back to extracted document text.
-- Isolated provider-specific request and response handling behind a clear boundary.
-- Kept Bedrock as the source and deployment-template default while leaving Groq implemented but inactive; provider changes remain explicit and there is no automatic fallback.
-- Stored analysis artifacts privately and exposed only authorized results and safe provenance metadata.
-- Presented summaries, figures, risks, and opportunities as document analysis with an explicit no-investment-recommendation disclaimer.
+- Completed summary, metrics, risks, opportunities, and citation views.
+- Displayed only results that passed schema and citation validation.
+- Prevented browser-side provider or model selection.
+- Completed tests for valid results, safe failures, and unavailable results.

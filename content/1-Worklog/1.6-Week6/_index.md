@@ -29,6 +29,22 @@ pre: " <b> 1.6. </b> "
 - Validated JSON schema, required fields, and page citations before accepting a result.
 - Stored result artifacts in private S3 and only safe status, artifact reference, and provenance in DynamoDB.
 
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| Bedrock model access | Learned the distinction between model configuration, IAM permission, and live account quota. |
+| Secrets Manager boundary | Learned that only Lambda reads the secret; the frontend receives no provider key or provider choice. |
+| CloudWatch provenance | Learned to record provider/model/version safely without exposing prompts or document data. |
+
+### Work completed
+
+- Built result views for summary, metrics, risks, opportunities, citations, and provenance.
+- Presented processing/failed/completed states consistently and never treated partial output as complete.
+- Added frontend tests for result schema, page citations, safe messages, and documents without results.
+
 ## Results and evidence
 
 - Invalid schema or citations are rejected and never presented as completed analysis.

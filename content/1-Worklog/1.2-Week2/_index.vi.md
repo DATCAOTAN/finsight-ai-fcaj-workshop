@@ -30,6 +30,22 @@ pre: " <b> 1.2. </b> "
 - Xác nhận chữ ký PDF, kích thước, metadata và SHA-256 trước khi chuyển trạng thái.
 - Xây dựng API list, get và delete bằng compound key của owner và document ID; xóa cả S3 versions và delete markers.
 
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| S3 presigned request | Hiểu trình duyệt upload trực tiếp mà không nhận AWS secret và backend vẫn kiểm soát policy. |
+| DynamoDB access pattern | Hiểu thiết kế bảng bắt đầu từ truy vấn list/get/delete và phạm vi owner. |
+| AWS SDK | Hiểu cách frontend nhận upload contract, gửi form tới S3 và gọi API quản lý tài liệu. |
+
+### Công việc thực hiện
+
+- Thiết kế luồng upload, danh sách, chi tiết, phân trang và xác nhận xóa trên giao diện.
+- Bổ sung kiểm tra file phía client và trạng thái đang tải, thành công, lỗi an toàn.
+- Xây dựng test case cho PDF thật, sai định dạng, quá giới hạn, key bị sửa và xóa lặp lại.
+
 ## Kết quả và bằng chứng
 
 - PDF thật chuyển từ `PENDING_UPLOAD` sang `UPLOADED`; file giả, file quá lớn và key bị sửa đều bị chặn.

@@ -24,11 +24,27 @@ pre: " <b> 1.7. </b> "
 | Serverless reliability | Hiểu bounded retry, idempotency, DLQ recovery và phân loại lỗi provider an toàn. |
 | AWS operations | Hiểu CloudFormation lifecycle, CloudWatch alarm recovery, cost evidence và destructive cleanup. |
 
-### Công việc thực hiện
+### Kế hoạch triển khai
 
 - Kích hoạt Gemini cho development bằng Secrets Manager; giữ Bedrock là source/template default và không tự động fallback.
 - Áp dụng giới hạn đầu vào tin cậy, không cắt ngầm; phân loại lỗi input, payload, rate limit, unavailable và unknown.
 - Chạy kiểm tra stack, IAM, S3 private, hai principal, queue/DLQ, alarm, log và secret scan; chỉ dọn tài nguyên kiểm thử khi phù hợp.
+
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| Cognito self-registration | Hiểu sign-up, confirmation code, resend code và các lỗi xác thực cần thông báo an toàn. |
+| CloudFront release verification | Hiểu invalidation, kiểm tra asset production và xác nhận bản đang phục vụ sau triển khai. |
+| AWS evidence and cost | Hiểu cách thu thập bằng chứng CloudFormation, CloudWatch, S3, Cognito và ghi chi phí đúng dữ liệu thực. |
+
+### Kế hoạch triển khai
+
+- Hoàn thiện self-registration, email confirmation, resend code và browser acceptance bằng email thật.
+- Xây dựng UX lỗi phân tích bằng tiếng Việt, retry cooldown, chống gửi trùng và hướng dẫn chia tài liệu theo phần logic.
+- Hoàn thiện Hugo workshop song ngữ, sơ đồ kiến trúc, ảnh bằng chứng, hướng dẫn demo và checklist bàn giao.
 
 ## Kết quả dự kiến và bằng chứng
 

@@ -29,6 +29,22 @@ pre: " <b> 1.4. </b> "
 - Separated IAM roles for API, dispatcher, consumer, and processing Lambdas.
 - Added structured logs, metrics, and alarms for Lambda errors, workflow failures, queue backlog, and DLQ messages.
 
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| CloudWatch Logs Insights | Learned safe request/document queries without logging PDF content or credentials. |
+| CloudWatch Alarms | Learned `OK`, `ALARM`, `INSUFFICIENT_DATA`, and automatic recovery behaviour. |
+| AWS CLI validation | Learned to inspect stacks, queues, alarms, and resource policies as evidence. |
+
+### Work completed
+
+- Built AWS regression tests for upload, document management, queues, and extraction.
+- Verified that logs contain no credentials, active presigned URLs, or document text.
+- Wrote an operational checklist for stack state, queue/DLQ, alarms, tests, and controlled cleanup.
+
 ## Results and evidence
 
 - The workflow recovers transient errors and records controlled terminal failures.

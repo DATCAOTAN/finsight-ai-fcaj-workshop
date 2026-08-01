@@ -29,6 +29,22 @@ pre: " <b> 1.6. </b> "
 - Kiểm tra JSON schema, trường bắt buộc và page citation trước khi chấp nhận kết quả.
 - Lưu result artifact trong S3 private; chỉ lưu trạng thái, artifact key và provenance an toàn trong DynamoDB.
 
+## Anh Đức
+
+### Kiến thức AWS
+
+| Nội dung | Kiến thức đạt được |
+|---|---|
+| Bedrock model access | Hiểu sự khác nhau giữa cấu hình model, quyền IAM và quota live của tài khoản. |
+| Secrets Manager boundary | Hiểu chỉ Lambda được đọc secret; frontend không nhận provider key hoặc chọn provider. |
+| CloudWatch provenance | Hiểu ghi provider/model/version an toàn để truy vết mà không lộ prompt hay dữ liệu tài liệu. |
+
+### Công việc thực hiện
+
+- Xây dựng giao diện kết quả gồm summary, metrics, risks, opportunities, citations và provenance.
+- Hiển thị trạng thái processing/failed/completed nhất quán; không xem partial output là hoàn tất.
+- Tạo test frontend cho schema result, page citations, thông báo an toàn và tài liệu không có kết quả.
+
 ## Kết quả và bằng chứng
 
 - Kết quả sai schema hoặc citation bị từ chối, không được trình bày như phân tích hoàn tất.

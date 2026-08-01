@@ -30,6 +30,22 @@ pre: " <b> 1.1. </b> "
 - Established IAM boundaries, private storage, and encryption as baseline requirements.
 - Created the SAM/CloudFormation structure and template-validation workflow.
 
+## Anh Đức
+
+### AWS knowledge
+
+| Topic | Knowledge gained |
+|---|---|
+| AWS Well-Architected Framework | Learned the six pillars and used security, reliability, and cost to assess the MVP. |
+| Serverless on AWS | Understood the roles of API Gateway, Lambda, S3, and DynamoDB in a serverless architecture. |
+| AWS Pricing and Budgets | Learned pay-as-you-go, Free Tier, and the need to monitor cost from the start. |
+
+### Work completed
+
+- Analysed users, the upload–status–result journey, and demonstration criteria.
+- Prepared the testing plan, evidence checklist, and workshop-document structure.
+- Reviewed the architecture from user-experience, cost, and operational perspectives.
+
 ## Results and evidence
 
 - Completed the architecture and MVP scope.

@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 1 - Anh Đức"
+title: "Tuần 1"
 date: 2026-06-22
 weight: 1
 chapter: false

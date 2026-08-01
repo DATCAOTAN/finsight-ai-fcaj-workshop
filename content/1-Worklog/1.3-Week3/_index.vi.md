@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 3 - Anh Đức"
+title: "Tuần 3"
 date: 2026-07-06
 weight: 3
 pre: " <b> 1.3. </b> "
@@ -11,7 +11,7 @@ pre: " <b> 1.3. </b> "
 
 - Hiểu hoạt động của SQS, DLQ và Step Functions từ góc nhìn theo dõi xử lý.
 - Trích xuất embedded text theo từng trang PDF.
-- Đánh giá chất lượng extraction và xác định `requires_ocr`.
+- Đánh giá chất lượng extraction và xác định requires_ocr.
 - Lưu artifact lớn trong S3 thay vì DynamoDB hoặc workflow state.
 
 ## Nội dung học tập và công việc triển khai
@@ -22,7 +22,7 @@ pre: " <b> 1.3. </b> "
 | 07/07 | Học cách đọc execution history trong Step Functions. | Theo dõi tài liệu qua validate, extraction và các nhánh failure. |
 | 08/07 | Nghiên cứu trích xuất embedded text và giới hạn của PDF scan. | Triển khai lấy text theo trang, giữ đúng page number. |
 | 09–10/07 | Học mô hình S3 artifact và giới hạn kích thước item/state. | Tạo extraction artifact JSON trong S3; DynamoDB chỉ giữ metadata. |
-| 11–12/07 | Nghiên cứu quality gate cho dữ liệu trích xuất. | Tính số trang có text, tổng ký tự, coverage và cờ `requires_ocr`. |
+| 11–12/07 | Nghiên cứu quality gate cho dữ liệu trích xuất. | Tính số trang có text, tổng ký tự, coverage và cờ requires_ocr. |
 
 ## Kết quả đạt được trong Tuần 3
 

@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 5 - Anh Đức"
+title: "Tuần 5"
 date: 2026-07-20
 weight: 5
 pre: " <b> 1.5. </b> "

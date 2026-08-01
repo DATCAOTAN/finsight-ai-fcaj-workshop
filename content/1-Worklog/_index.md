@@ -1,12 +1,10 @@
 ---
-title: "Worklog - Anh Duc"
+title: "Worklog"
 date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-
-This Worklog records **Anh Duc's** learning and implementation during eight weeks of the AWS First Cloud Journey program and FinSight AI development.
 
 **Internship period:** 22 June–15 August 2026
 
@@ -20,4 +18,3 @@ This Worklog records **Anh Duc's** learning and implementation during eight week
 | [Week 6](1.6-week6/) | 27 Jul–02 Aug 2026 | Result presentation and AI-output validation |
 | [Weeks 7–8](1.7-week7/) | 03–15 Aug 2026 | Registration, failure UX, workshop, and handover |
 
-Each milestone follows the original Worklog structure: objectives, learned knowledge, FinSight AI implementation, and verified results. Weeks 7 and 8 are combined because both belong to the final hardening and handover stage.

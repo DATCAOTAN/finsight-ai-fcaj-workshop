@@ -1,5 +1,5 @@
 ---
-title: "Nhật ký Tuần 7–8 - Anh Đức"
+title: "Tuần 7–8"
 date: 2026-08-03
 publishDate: 2026-07-29
 weight: 7

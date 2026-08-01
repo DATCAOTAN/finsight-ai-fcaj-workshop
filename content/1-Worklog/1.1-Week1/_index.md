@@ -1,5 +1,5 @@
 ---
-title: "Week 1 Worklog - Anh Duc"
+title: "Week 1"
 date: 2026-06-22
 weight: 1
 chapter: false

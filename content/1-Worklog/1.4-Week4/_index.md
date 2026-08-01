@@ -1,5 +1,5 @@
 ---
-title: "Week 4 Worklog - Anh Duc"
+title: "Week 4"
 date: 2026-07-13
 weight: 4
 pre: " <b> 1.4. </b> "
@@ -20,7 +20,7 @@ pre: " <b> 1.4. </b> "
 |---|---|---|
 | 13 Jul | Studied CloudWatch Logs and Logs Insights. | Queried document/request failures without recording PDF text or credentials. |
 | 14 Jul | Learned CloudWatch Metrics, EMF, and alarm evaluation. | Checked alarms for Lambda, workflow, queue backlog, and DLQ. |
-| 15 Jul | Learned `OK`, `ALARM`, and `INSUFFICIENT_DATA`. | Confirmed that intentional-test alarms automatically return to `OK`. |
+| 15 Jul | Learned OK, ALARM, and INSUFFICIENT_DATA. | Confirmed that intentional-test alarms automatically return to OK. |
 | 16–17 Jul | Learned AWS CLI evidence collection. | Checked stack status, queue attributes, alarm state, and resource policies. |
 | 18–19 Jul | Studied negative security testing. | Checked logs for credentials, JWTs, active presigned URLs, and document text. |
 

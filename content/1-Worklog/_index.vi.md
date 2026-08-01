@@ -1,12 +1,10 @@
 ---
-title: "Nhật ký công việc - Anh Đức"
+title: "Worklog"
 date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-
-Nhật ký này ghi lại phần học tập và triển khai của **Anh Đức** trong tám tuần tham gia chương trình AWS First Cloud Journey và xây dựng FinSight AI.
 
 **Thời gian thực tập:** 22/06/2026 – 15/08/2026
 
@@ -20,4 +18,3 @@ Nhật ký này ghi lại phần học tập và triển khai của **Anh Đức
 | [Tuần 6](1.6-week6/) | 27/07–02/08/2026 | Giao diện kết quả và kiểm tra đầu ra AI |
 | [Tuần 7–8](1.7-week7/) | 03–15/08/2026 | Đăng ký, UX lỗi, workshop và bàn giao |
 
-Mỗi mốc giữ nguyên cấu trúc của Worklog gốc: mục tiêu, kiến thức học được, công việc áp dụng vào FinSight AI và kết quả kiểm chứng. Tuần 7 và Tuần 8 được gộp vì cùng thuộc giai đoạn hoàn thiện và bàn giao.

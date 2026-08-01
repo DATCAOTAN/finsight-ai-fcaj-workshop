@@ -1,5 +1,5 @@
 ---
-title: "Week 6 Worklog - Anh Duc"
+title: "Week 6"
 date: 2026-07-27
 weight: 6
 pre: " <b> 1.6. </b> "

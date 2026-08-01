@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong quá trình thực tập, em đã tham gia 2 events. Mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những khoảnh khắc rất tuyệt vời.
+Trong quá trình thực tập, em đã tham gia 3 events. Mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những khoảnh khắc rất tuyệt vời.
 
 ### [Event 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** FCAJ - CLOUD ARCHITECT
@@ -27,3 +27,14 @@ Trong quá trình thực tập, em đã tham gia 2 events. Mỗi event là một
 &emsp;**Địa điểm:** Tầng 26, Toà nhà Bitexco Financial
 
 &emsp;**Vai trò trong sự kiện:** Thính giả 
+
+---
+
+### [Event 3](4.3-Event3/)
+&emsp;**Tên sự kiện:** FCAJ - 3-DAY AGENTFORCE WORKSHOP AGENDA
+
+&emsp;**Thời gian:** Thứ 7, 01/08/2026
+
+&emsp;**Địa điểm:** Tầng 26, Toà nhà Bitexco Financial
+
+&emsp;**Vai trò trong sự kiện:** Thính giả & Người thực hành Lab 

@@ -25,7 +25,7 @@ pre: " <b> 1.7. </b> "
 | 10–12/08 | Tìm hiểu CloudFront invalidation và release verification. | Kiểm tra asset production, phiên đăng nhập cũ và người dùng đăng ký mới trên website thật. |
 | 13–15/08 | Học cách trình bày kiến trúc và bằng chứng FCAJ. | Hoàn thiện Hugo song ngữ, sơ đồ AWS, ảnh bằng chứng, hướng dẫn demo và Worklog. |
 
-## Kết quả dự kiến trong Tuần 7–8
+## Kết quả đạt được trong Tuần 7–8
 
 - Luồng đăng ký, xác nhận email, đăng nhập và đăng nhập lại được kiểm tra trên production.
 - Lỗi phân tích nêu rõ upload/extraction đã thành công, chưa có kết quả hoàn chỉnh và hành động tiếp theo.

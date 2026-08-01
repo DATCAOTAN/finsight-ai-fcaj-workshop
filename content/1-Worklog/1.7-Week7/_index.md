@@ -25,7 +25,7 @@ pre: " <b> 1.7. </b> "
 | 10–12 Aug | Learned CloudFront invalidation and release verification. | Checked production assets, existing sessions, and new-user registration on the live site. |
 | 13–15 Aug | Learned FCAJ architecture and evidence presentation. | Finalised bilingual Hugo content, AWS diagrams, evidence, demo instructions, and Worklog. |
 
-## Planned Weeks 7–8 Outcomes
+## Weeks 7–8 Achievements
 
 - Registration, email confirmation, sign-in, and returning-user sign-in are verified in production.
 - Failure UX states that upload/extraction succeeded, no complete result exists, and which action is appropriate.

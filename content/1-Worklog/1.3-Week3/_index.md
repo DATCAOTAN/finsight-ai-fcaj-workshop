@@ -7,46 +7,30 @@ pre: " <b> 1.3. </b> "
 
 **Period:** 6–12 July 2026
 
-## Objectives
+## Week 3 Objectives
 
-- Build asynchronous document processing with retries and a DLQ.
-- Start workflows idempotently.
-- Extract embedded PDF text page by page.
+- Study event-driven processing with Amazon S3, EventBridge, Amazon SQS, and AWS Lambda.
+- Understand retry, visibility-timeout, dead-letter queue, and idempotency patterns.
+- Learn how embedded PDF text can be extracted and evaluated page by page.
+- Build a reliable document-processing lifecycle from upload to extracted text.
+- Keep document binaries and processing artifacts private while exposing only safe metadata.
 
-## Tấn Đạt
+## Learning and implementation activities
 
-### AWS knowledge
+| Time | Learning topic | FinSight AI implementation activity |
+|---|---|---|
+| 6 July | Studied how S3 events can drive state changes without direct service coupling. | Connected confirmed S3 uploads to an EventBridge rule so document processing starts only after a real object transition. |
+| 7 July | Studied SQS visibility timeouts, retries, and dead-letter queues for durable asynchronous delivery. | Configured the processing queue to absorb bursts and isolate repeated failures. |
+| 8 July | Learned why idempotent consumers are necessary when messages can be delivered more than once. | Added lifecycle checks so duplicate delivery does not restart work for a document that is already processing or complete. |
+| 9–10 July | Studied embedded PDF text extraction and the value of retaining page boundaries. | Used pypdf to extract embedded text page by page and preserved page numbers for later citations. |
+| 11–12 July | Learned how quality gates and private artifacts support safe document processing. | Added checks for empty or unusable text, stored extracted content in private S3 objects, and kept DynamoDB records limited to status and artifact metadata. |
 
-| Topic | Knowledge gained |
-|---|---|
-| DynamoDB Streams | Learned stream records, event source mappings, and lifecycle-transition detection. |
-| Amazon SQS and DLQ | Learned at-least-once delivery, visibility timeout, retry, and redrive policy. |
-| AWS Step Functions | Learned Standard Workflows, deterministic execution names, and state-size limits. |
+## Week 3 Achievements
 
-### Work completed
-
-- Connected `DynamoDB Streams → dispatcher Lambda → SQS → consumer Lambda → Step Functions`.
-- Added lifecycle guards and deterministic execution names so duplicate events cannot create invalid workflows.
-- Configured encrypted queues, a DLQ, visibility timeout, and resource-scoped IAM permissions.
-
-## Anh Đức
-
-### AWS knowledge
-
-| Topic | Knowledge gained |
-|---|---|
-| SQS operations | Learned visible/in-flight message states, queue depth, and failed-message observation. |
-| Step Functions execution | Learned execution history and how to trace each document-processing step. |
-| S3 artifact pattern | Learned per-document artifact prefixes and why large content stays outside workflow state and DynamoDB. |
-
-### Work completed
-
-- Implemented page-aware embedded-text extraction with page numbers and quality statistics.
-- Created the extraction JSON artifact in S3 and stored only metadata and `requires_ocr` in DynamoDB.
-- Prepared PDF fixtures and tests for text, empty, malformed, encrypted, and image-only documents.
-
-## Results and evidence
-
-- An `UPLOADED` document is queued and starts one valid workflow.
-- Duplicate messages do not duplicate processing; repeatedly failing messages are sent to the DLQ.
-- The workflow carries metadata only; PDFs and artifacts remain in private S3.
+- Completed an event-driven path from confirmed upload to queued document processing.
+- Added retry-aware SQS processing with a dead-letter queue for messages that repeatedly fail.
+- Made the consumer idempotent so duplicate events do not create duplicate work.
+- Extracted embedded PDF text with page boundaries intact, preparing the data for traceable analysis.
+- Added explicit handling for encrypted, unreadable, image-only, or otherwise unusable PDFs instead of silently producing weak output.
+- Kept original PDFs and extracted artifacts private in S3 while returning only safe status information through the application.
+- Established clear document states that the API and later user interface could report consistently.

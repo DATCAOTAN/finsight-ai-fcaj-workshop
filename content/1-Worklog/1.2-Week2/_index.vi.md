@@ -6,48 +6,32 @@ chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-**Thời gian:** 29/06–05/07/2026
+**Thời gian:** 29/06/2026 – 05/07/2026
 
-## Mục tiêu
+## Mục tiêu Tuần 2
 
-- Xây dựng luồng tải PDF an toàn vào Amazon S3.
-- Thiết kế metadata và vòng đời tài liệu trong DynamoDB.
-- Cung cấp API quản lý tài liệu theo chủ sở hữu.
+- Tìm hiểu lưu trữ Amazon S3 riêng tư và có versioning.
+- Xây dựng luồng tải PDF trực tiếp từ trình duyệt lên S3 một cách an toàn.
+- Thiết kế metadata và các trạng thái vòng đời tài liệu trong DynamoDB.
+- Triển khai API tài liệu theo chủ sở hữu.
+- Áp dụng tính idempotent và xóa dữ liệu an toàn.
 
-## Tấn Đạt
+## Nội dung học tập và công việc triển khai
 
-### Kiến thức AWS
+| Thời gian | Nội dung học tập | Công việc áp dụng vào FinSight AI |
+|---|---|---|
+| Đầu tuần | Tìm hiểu S3 Block Public Access, mã hóa, versioning, quyền sở hữu đối tượng và các yếu tố về vòng đời dữ liệu. | FinSight AI lưu PDF trong bucket riêng tư, được mã hóa, có versioning và không cho phép truy cập đối tượng công khai. |
+| Đầu tuần | Học cách chính sách presigned POST có ràng buộc giới hạn kích thước, MIME type, object key và header mã hóa. | Luồng tải lên cho phép gửi PDF trực tiếp tới S3 nhưng backend vẫn kiểm soát mọi trường tải lên đáng tin cậy. |
+| Giữa tuần | Tìm hiểu cách kiểm tra file bằng chữ ký %PDF-, kích thước khai báo, metadata và tính toàn vẹn SHA-256. | Lambda xác nhận kiểm tra đối tượng đã tải lên trước khi chuyển tài liệu sang trạng thái đáng tin cậy. |
+| Giữa tuần | Học về partition key, sort key, cập nhật có điều kiện và trạng thái vòng đời rõ ràng trong DynamoDB. | Metadata tài liệu được lưu tách biệt với nội dung PDF và được phân vùng theo chủ sở hữu đã xác thực. |
+| Cuối tuần | Tìm hiểu kiểm tra request trong API Gateway và Lambda, tính idempotent, phân trang và xóa có nhận biết version. | Dự án triển khai API danh sách, chi tiết và xóa theo chủ sở hữu, hỗ trợ request lặp lại an toàn và phản hồi lỗi có cấu trúc. |
 
-| Nội dung | Kiến thức đạt được |
-|---|---|
-| Amazon S3 | Hiểu Block Public Access, SSE-KMS, versioning, presigned POST và điều kiện policy. |
-| Amazon DynamoDB | Hiểu partition key, sort key, conditional update, Query và pagination token. |
-| API Gateway và Lambda | Hiểu proxy integration, kiểm tra request và vai trò IAM riêng cho từng Lambda. |
+## Kết quả đạt được trong Tuần 2
 
-### Công việc thực hiện
-
-- Triển khai upload contract có giới hạn MIME type, kích thước, object key và mã hóa.
-- Xác nhận chữ ký PDF, kích thước, metadata và SHA-256 trước khi chuyển trạng thái.
-- Xây dựng API list, get và delete bằng compound key của owner và document ID; xóa cả S3 versions và delete markers.
-
-## Anh Đức
-
-### Kiến thức AWS
-
-| Nội dung | Kiến thức đạt được |
-|---|---|
-| S3 presigned request | Hiểu trình duyệt upload trực tiếp mà không nhận AWS secret và backend vẫn kiểm soát policy. |
-| DynamoDB access pattern | Hiểu thiết kế bảng bắt đầu từ truy vấn list/get/delete và phạm vi owner. |
-| AWS SDK | Hiểu cách frontend nhận upload contract, gửi form tới S3 và gọi API quản lý tài liệu. |
-
-### Công việc thực hiện
-
-- Thiết kế luồng upload, danh sách, chi tiết, phân trang và xác nhận xóa trên giao diện.
-- Bổ sung kiểm tra file phía client và trạng thái đang tải, thành công, lỗi an toàn.
-- Xây dựng test case cho PDF thật, sai định dạng, quá giới hạn, key bị sửa và xóa lặp lại.
-
-## Kết quả và bằng chứng
-
-- PDF thật chuyển từ `PENDING_UPLOAD` sang `UPLOADED`; file giả, file quá lớn và key bị sửa đều bị chặn.
-- S3 private, mã hóa, versioning và Block Public Access được kiểm chứng.
-- API dùng DynamoDB `Query`, phân trang không lộ `LastEvaluatedKey`, thao tác lặp lại an toàn.
+- Triển khai tải PDF an toàn mà không công khai bucket hoặc đối tượng S3.
+- Lưu metadata tài liệu tách biệt với nội dung PDF trong DynamoDB.
+- Hoàn thành thao tác danh sách, chi tiết, phân trang và xóa theo chủ sở hữu.
+- Ngăn truy cập tài liệu giữa các người dùng bằng cách suy ra chủ sở hữu từ ngữ cảnh request đã xác thực.
+- Bổ sung tính idempotent cho tạo, xác nhận và xóa để retry an toàn.
+- Kiểm tra luồng tải lên và quản lý tài liệu bằng test cục bộ và test tích hợp trên AWS.
+- Rút ra bài học rằng bảo mật tải lên cần sự phối hợp giữa API Gateway, Lambda, IAM, DynamoDB và S3.

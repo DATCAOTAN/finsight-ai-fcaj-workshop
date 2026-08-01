@@ -1,12 +1,10 @@
 ---
-title: "Nhật ký công việc - Tấn Đạt"
+title: "Worklog"
 date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-
-Nhật ký này ghi lại phần học tập và triển khai của **Tấn Đạt** trong tám tuần tham gia chương trình AWS First Cloud Journey và xây dựng FinSight AI.
 
 **Thời gian thực tập:** 22/06/2026 – 15/08/2026
 
@@ -20,4 +18,3 @@ Nhật ký này ghi lại phần học tập và triển khai của **Tấn Đ�
 | [Tuần 6](1.6-week6/) | 27/07–02/08/2026 | Analysis Lambda, schema và provenance |
 | [Tuần 7–8](1.7-week7/) | 03–15/08/2026 | Provider, hardening và kiểm chứng cuối |
 
-Mỗi mốc giữ nguyên cấu trúc của Worklog gốc: mục tiêu, kiến thức học được, công việc áp dụng vào FinSight AI và kết quả kiểm chứng. Tuần 7 và Tuần 8 được gộp vì cùng thuộc giai đoạn hoàn thiện và bàn giao.

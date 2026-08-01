@@ -1,5 +1,5 @@
 ---
-title: "Week 6 Worklog - Tan Dat"
+title: "Week 6"
 date: 2026-07-27
 weight: 6
 pre: " <b> 1.6. </b> "
@@ -27,6 +27,6 @@ pre: " <b> 1.6. </b> "
 ## Week 6 Achievements
 
 - Preserved the analysis schema and citation contract.
-- Prevented invalid responses from reaching `COMPLETED`.
+- Prevented invalid responses from reaching COMPLETED.
 - Made the result API owner-scoped without exposing S3 keys or exceptions.
 - Kept secrets out of source, templates, frontend assets, and logs.

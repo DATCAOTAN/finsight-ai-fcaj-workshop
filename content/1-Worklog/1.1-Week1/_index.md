@@ -1,5 +1,5 @@
 ---
-title: "Week 1 Worklog - Tan Dat"
+title: "Week 1"
 date: 2026-06-22
 weight: 1
 chapter: false
@@ -19,7 +19,7 @@ pre: " <b> 1.1. </b> "
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| Early week | Studied Regions, Availability Zones, and AWS Global Infrastructure. | Selected `ap-southeast-1` and defined the deployment-resource boundary. |
+| Early week | Studied Regions, Availability Zones, and AWS Global Infrastructure. | Selected ap-southeast-1 and defined the deployment-resource boundary. |
 | Early week | Learned Shared Responsibility and IAM least privilege. | Made private storage, encryption, and component-scoped access baseline requirements. |
 | Midweek | Studied API Gateway, Lambda, S3, and DynamoDB architecture. | Designed upload, metadata, asynchronous processing, and result retrieval. |
 | Midweek | Learned AWS SAM and CloudFormation. | Created the infrastructure template and development parameters. |

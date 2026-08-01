@@ -1,5 +1,5 @@
 ---
-title: "Week 5 Worklog"
+title: "Week 5 Worklog - Tan Dat"
 date: 2026-07-20
 weight: 5
 pre: " <b> 1.5. </b> "
@@ -9,28 +9,24 @@ pre: " <b> 1.5. </b> "
 
 ## Week 5 Objectives
 
-- Study Amazon Cognito user pools and the difference between authentication and authorization.
-- Learn how a browser can call an IAM-protected API without embedding long-lived credentials.
-- Build the main React journeys for signing in, uploading, and tracking documents.
-- Enforce document ownership on the server rather than trusting browser-supplied identity.
-- Deliver the frontend through private S3 storage and Amazon CloudFront.
+- Deploy Cognito User Pool and Identity Pool.
+- Protect API Gateway with AWS_IAM/SigV4.
+- Enforce ownership from verified identity.
+- Deliver the frontend through CloudFront and a private S3 origin.
 
 ## Learning and implementation activities
 
 | Time | Learning topic | FinSight AI implementation activity |
 |---|---|---|
-| 20 July | Studied Cognito authentication and the separation between user pools, application clients, and AWS credentials. | Configured a Cognito user pool and application client for authenticated users, with no client secret in the browser and unauthenticated access disabled. |
-| 21 July | Learned how a browser can use temporary credentials to sign AWS requests safely. | Used temporary Cognito credentials to sign protected API requests with Signature Version 4. |
-| 22 July | Studied the difference between authentication, authorization, and resource ownership. | Derived the user identity from verified request context and applied owner checks to document listing, upload, status, and result operations. |
-| 23–24 July | Studied React interaction patterns for asynchronous application journeys. | Built sign-in, document list, upload, status refresh, loading, empty, success, and safe error states. |
-| 25–26 July | Learned how CloudFront can deliver a static site while its S3 origin remains private. | Served the React build through CloudFront with a private S3 origin and exercised authentication, ownership, and browser request flows. |
+| 20 Jul | Learned User Pools, app clients, tokens, and email confirmation. | Declared a User Pool without a browser client secret. |
+| 21 Jul | Studied Identity Pools and authenticated roles. | Exchanged tokens for temporary credentials and disabled unauthenticated access. |
+| 22 Jul | Learned API Gateway `AWS_IAM` and SigV4. | Required requests signed by the valid Cognito role. |
+| 23–24 Jul | Studied identity in request context. | Derived owner server-side instead of trusting a client owner ID. |
+| 25–26 Jul | Learned CloudFront OAC and private origins. | Served the frontend over HTTPS without a public bucket. |
 
 ## Week 5 Achievements
 
-- Added Cognito-based sign-in with short-lived AWS credentials for browser sessions.
-- Kept long-lived secrets and application-client secrets out of the frontend.
-- Signed protected browser requests for the IAM-authorized API.
-- Enforced ownership from server-verified identity instead of accepting an owner identifier from the client.
-- Completed the core document-management interface, including upload progress and understandable status feedback.
-- Added calm loading, empty, and error states so expected failures remain clear to users.
-- Published the frontend through CloudFront while keeping the underlying S3 origin private.
+- Authenticated users obtained temporary credentials and signed API requests.
+- Unsigned requests returned `403`; foreign-owner operations returned safe `404`.
+- Verified ownership isolation with two principals.
+- Delivered the frontend through CloudFront with a private S3 origin.
